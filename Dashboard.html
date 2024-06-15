@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lerniio Dashboard</title>
+    <link rel="stylesheet" href="Dashboard.css">
+    <!-- the google fonts -->
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+    <!-- the second font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <!-- recursive -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Recursive:wght@300..1000&display=swap" rel="stylesheet">
+    <!-- external cdn - Frameworks -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Extras -->
+</head>
+<body>
+    <!-- the navigation section of the dashboard -->
+    <section class="navigation-section">
+        <div>
+            <header class="nav-header">
+                <div class="Dashboard-container">
+                    <nav>
+                        <div class="logo">
+                            <svg width="50px" height="50px" viewBox="0 -37 256 256" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid" fill="#2a025a"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g> <path d="M216.357806,174.771308 C255.135865,205.772152 279.979747,113.201688 218.194093,96.1350211 C166.345992,81.7687764 114.17384,106.396624 61.8936709,163.861603 C61.8936709,163.861603 158.460759,128.540084 216.357806,174.771308 Z" fill="#7e77b1"> </path> <path d="M62.7578059,163.105485 C99.9156118,124.54346 161.701266,81.5527426 219.274262,97.4312236 C232.668354,101.211814 242.17384,108.98903 248.330802,118.278481 L193.890295,8.42531646 C186.11308,-3.99662447 166.237975,-1.40421941 155.004219,8.10126582 L11.1257384,128.648101 C-1.9443038,139.881857 -2.70042194,159.864979 9.39746835,171.962869 C20.0911392,182.65654 37.049789,183.628692 48.8236287,174.123207 L62.7578059,163.105485 Z" fill="#fff"> </path> </g> </g></svg>
+                            Lerniio
+                        </div>
+                        <div class="menu-Ham">
+                            <svg width="32px" height="18px" xmlns="http://www.w3.org/2000/svg"><g fill="#2a025a" fill-rule="evenodd"><path d="M0 0h32v2H0zM0 8h32v2H0zM0 16h32v2H0z"/></g></svg>
+                        </div>
+                        <ul>
+                            <li>
+                                <img src="./asset/home-svgrepo-com.svg" alt="">
+                                <a href="./Dashboard.html">Home</a>
+                            </li>
+                            <li>
+                                <img src="./asset/search-globe-svgrepo-com.svg" alt="">
+                                <a href="#">search</a>
+                            </li>
+                            <li>
+                                <img src="./asset/school-svgrepo-com.svg" alt="">
+                                <a href="#">Schools</a>
+                            </li>
+                            <li>
+                                <img src="./asset/exam-svgrepo-com.svg" alt="">
+                                <a href="#">Examination</a>
+                            </li>    
+                        </ul>
+                    </nav>
+                </div>
+            </header>
+        </div>
+        <div class="sign-out">
+            <ul>
+                <li>
+                    <img src="./asset/help-desk-log-svgrepo-com.svg" alt="">
+                    <a href="#">help</a>
+                </li>
+                <li>
+                    <img src="./asset/log-out-svgrepo-com.svg" alt="">
+                    <a href="#">Log out</a>
+                </li>
+            </ul>
+        </div>
+    </section>
+    <!-- the main section of the Dasboard page -->
+     <section class="main-content">
+        <!-- the search contents -->
+        <div class="content-search">
+            <div class="search-icon">
+                <img src="./asset/search-alt-2-svgrepo-com.svg" alt="">
+                <input class="search-name"  type="search" name="searchcontents" placeholder="search">
+            </div>
+            <!-- the light theme -->
+            <div class="light-person">
+                <img src="./asset/light-svgrepo-com.svg" alt="">
+                <img src="./asset/image-thomas.jpg" alt="">
+            </div>
+        </div>
+        <h1>Hi, Welcome Peterson <!-- ini between would be a functionality from the username--></h1>
+        <!-- the first section -->
+        <section class="welcome-content">
+            <!-- learn about schools -->
+            <div class="contents-items contents-1">
+                <!-- the date event -->
+                <div class="date-event">
+                    <p class="date-content"></p>
+                    <div>
+                        <!-- the svg contents for the school -->
+                        <img src="./asset/book-education-food-svgrepo-com.svg" alt="">
+                    </div>
+                </div>
+                <!-- main contents -->
+                <div class="cont">
+                    <h3>Universities</h3>
+                    <p class="cont-p">
+                        Get to know more schools, meet more people, information needed
+                        and all it's admission requirements.
+                    </p>
+                    <button class="cont-btn">Learn more</button>
+                </div>
+            </div>
+            <!-- Learn about Examinations -->
+            <div class="contents-items contents-2">
+                <div class="date-event">
+                    <p class="date-content"></p>
+                    <div>
+                        <!-- the svg contents for the school -->
+                         <img src="./asset/books-notes-student-svgrepo-com (1).svg" alt="">
+                    </div>
+                </div>
+                <!-- main contents -->
+                <div class="cont">
+                    <h3>Examinations</h3>
+                    <p class="cont-p">
+                        Learn more about different examinations bodies in Nigeria. Know it's requirements,
+                        it's subjects dates and curriculums.
+                    </p>
+                    <button class="cont-btn">Learn more</button>
+                </div>
+            </div>
+            <!-- Get exam curriculums -->
+            <div class="contents-items contents-3">
+                <div class="date-event">
+                    <p class="date-content"></p>
+                    <div>
+                        <!-- the svg contents for the school -->
+                         <img src="./asset/arrow-book-cloud-svgrepo-com.svg" alt="">
+                    </div>
+                </div>
+                <!-- main contents -->
+                <div class="cont">
+                    <h3>Courses</h3>
+                    <p class="cont-p">
+                        Be informed about what you want to study, why you want to study it, 
+                        and the opportunities surrounding the course.
+                    </p>
+                    <button class="cont-btn">Learn more</button>
+                </div>
+            </div>
+            <!-- a scorll effect of different layers of academic contents -->
+            <div class="contents-items contents-4">
+                <div>
+                    <img src="https://img.freepik.com/free-vector/placeholder-concept-illustration_114360-4983.jpg?t=st=1718021890~exp=1718025490~hmac=53048ef908b919284e21de41b8af51b8033eb2ee7d4f5ef82980e463698928b9&w=740" alt="">
+                </div>
+            </div>
+        </section>
+        <!-- the list section -->
+        <section class="filtered-lists">
+            <div class="filtered filtered-1">
+                    <h1>Top university</h1>
+                <div class="topuni-lists">
+                        <div class="uni-1">
+                            <p>Federal universities</p>
+                        </div>
+                        <div class="uni-1">
+                            <p>State Universities</p>
+                        </div>
+                        <div class="uni-1">
+                            <p>Private Universities</p>
+                        </div>
+                        <div class="uni-1">
+                            <p>Colleges of Education</p>
+                        </div>
+                        <div class="uni-1">
+                            <p>Polythecnic Universities</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="filtered filtered-2">
+                <!-- the list of university -->
+                <div class="filtering-header">
+                    <h1>Universities in Nigeria</h1>
+                    <h5>View all</h5>
+                </div>
+                 <div class="filtering">
+                    <p class="school-name">Unilag</p>
+                    <p>300 courses</p>
+                    <p>15 Dept</p>
+                    <p>Jamb/wassce</p>
+                    <p>Lagos state</p>
+                 </div>
+                 <div class="filtering">
+                    <p class="school-name">Uniben</p>
+                    <p>350 courses</p>
+                    <p>10 Dept</p>
+                    <p>Jamb/wassce</p>
+                    <p>Benin state</p>
+                 </div>
+                 <div class="filtering">
+                    <p class="school-name">Caleb</p>
+                    <p>200 courses</p>
+                    <p>11 Dept</p>
+                    <p>Private</p>
+                    <p>Lagos state</p>
+                 </div>
+                 <div class="filtering">
+                    <p class="school-name">Yabatech</p>
+                    <p>200 courses</p>
+                    <p>15 Dept</p>
+                    <p>Jamb/wassce</p>
+                    <p>Lagos state</p>
+                 </div>
+            </div>
+        </section>
+     </section>
+
+    <script src="Dashboard.js"></script>
+</body>
+</html>
