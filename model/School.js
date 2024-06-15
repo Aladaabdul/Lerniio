@@ -10,6 +10,11 @@ const schoolSchema = new Schema({
         trim: true,
         required: [true, '  school name  is  required']
     },
+    shortName: {
+        type: String,
+        unique: true,
+        required: [true, '  short name  is  required']
+    },
 
     schoolDescription: {
         type: String,
