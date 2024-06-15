@@ -64,7 +64,7 @@ exports.getschool = async (req, res, next) => {
     try {
 
         //  get all school  
-        const getschool = await School.find().select('schoolName schoolDescription -id')
+        const getschool = await School.find().select('schoolName location  schoolDescription -id')
         return res.status(200).json({
             message: ' all  school data found',
             data: getschool
