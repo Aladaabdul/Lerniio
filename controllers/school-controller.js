@@ -10,6 +10,8 @@ exports.createSchool = async (req, res, next) => {
             jamb,
             postUtme,
         },
+        location,
+        schooltype,
         courses } = req.body
     const createSchool = new School({
         schoolName,

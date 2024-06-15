@@ -40,6 +40,17 @@ const schoolSchema = new Schema({
         }
 
     },
+    schooltype: {
+        type: String,
+        required: [true, "SchoolType is  required"],
+        trim: true,
+        default: "federal"
+    },
+    location: {
+        type: String,
+        required: [true, "location is  required"],
+        trim: true
+    },
     courses: {
 
         type: Array,
