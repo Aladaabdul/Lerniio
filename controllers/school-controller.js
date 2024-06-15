@@ -20,9 +20,9 @@ exports.createSchool = async (req, res, next) => {
             schoolsitting,
             jamb,
             postUtme,
-
-
         },
+        location,
+        schooltype,
         courses,
     })
 
