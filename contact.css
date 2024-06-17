@@ -1,0 +1,269 @@
+* {
+    text-decoration: none;
+    list-style-type: none;   
+}
+
+body {
+    font-family: "Lato", sans-serif;
+    background-color: #f7f7f7;
+    color: #333;
+}
+#contact-all {
+    margin: 50px auto;
+    padding: 70px 80px;
+    padding-right: 0px;
+    max-width: 1200px;
+    text-align: left;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: #ffff;
+    box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+}
+#contact-all h1 {
+    text-align: left;
+    margin-bottom: 30px;
+    font-size: 35px;
+    text-transform: capitalize;
+    font-family: "Recursive", sans-serif;
+    color: #2a025a;
+}
+/* .contact-form {
+    margin-right: 100px;
+} */
+#name-email {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 10px;
+}
+.name, .email {
+    padding: 14px 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 200px;
+    font-family: "Lato", sans-serif;
+}
+.email {
+    margin-left: 8px;
+}
+.subj {
+    margin-bottom: 10px;
+}
+.subject {
+    padding: 14px 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 410px;
+    font-family: "Lato", sans-serif;
+}
+textarea {
+    border: 1px solid #ccc;
+    padding: 6px 8px;
+    /* font-family: "Roboto" sans-serif; */
+    font-family: "Lato", sans-serif;
+}
+.name:focus, .email:focus, 
+.subject:focus, textarea:focus {
+    outline: none;
+}
+.contact-display {
+    position: relative;
+}
+.svg-contact {
+    position: absolute;
+    top: 0px;
+    left: 600px;
+}
+.contact-btn {
+    color: #ffff;
+    background-color: #2a025a;
+    border: 0px;
+    border-radius: 5px;
+    padding: 10px 18px;
+    margin-top: 20px;
+    cursor: pointer;
+}
+.contact-btn:hover {
+    background-color: #3e13728f;
+    transition: .5s ease-in;
+}
+
+.pop-up {
+    /* margin: 100px 100px;
+    margin-right: 100px; */
+    padding: 50px;
+    text-align: center;
+}
+/* mini laptop responsive design */
+@media screen  and (max-width:  1200px) {
+    #contact-all {
+        margin: 50px auto;
+        padding: 70px 40px;
+        padding-right: 0px;
+        max-width: 1000px;
+        text-align: left;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        background-color: #ffff;
+        box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+    }
+
+    .svg-contact {
+        position: absolute;
+        top: 0px;
+        left: 470px;
+    }
+    .image-display img {
+        width: 100%;
+    }
+    /* the footer responsive styles */
+}
+/* tablet responsive design */
+@media screen  and (max-width: 1024px) {
+    #contact-all {
+        margin: 50px auto;
+        padding: 70px 40px;
+        padding-right: 30px;
+        max-width: 900px;
+        text-align: left;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        background-color: #ffff;
+        box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+    }
+    .name, .email {
+        padding: 14px 8px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        width: 160px;
+        font-family: "Lato", sans-serif;
+    }
+    .subject {
+        padding: 14px 8px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        width: 330px;
+        font-family: "Lato", sans-serif;
+    }
+    textarea {
+        width: 332px;
+        height: 110px;
+    }
+    .svg-contact {
+        position: absolute;
+        top: -40px;
+        left: 380px;
+    }
+    .image-display img {
+        width: 100%;
+    }
+}
+@media screen  and (max-width: 800px) {
+    .svg-contact {
+        position: absolute;
+        top: -40px;
+        left: 340px;
+    }
+}
+@media screen  and (max-width: 768px) {
+    .svg-contact {
+        position: absolute;
+        top: -40px;
+        left: 320px;
+    }
+}
+@media screen  and (max-width: 640px) {
+    
+}
+/* mobile responsive design */
+@media screen  and (max-width:  450px) {
+    #contact-all {
+        margin: 50px auto;
+        padding: 50px 20px;
+        padding-right: 20px;
+        max-width: 390px;
+        text-align: left;
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: flex-start;
+        background-color: #ffff;
+        box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+        z-index: -1;
+    }
+    .svg-contact {
+        position: absolute;
+        top: 0px;
+        left: 320px;
+    }
+    .image-display img {
+        width: 100%;
+    }
+    .name, .email {
+        padding: 14px 8px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        width: 176px;
+        font-family: "Lato", sans-serif;
+    }
+    .email {
+        margin-left: 8px;
+    }
+    .subject {
+        padding: 14px 8px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        width: 360px;
+        font-family: "Lato", sans-serif;
+    }
+    textarea {
+        width: 357px;
+        height: 113px;
+    }
+    #contact-all h1 {
+        text-align: left;
+        margin-top: 100px;
+        margin-bottom: 30px;
+        font-size: 35px;
+        text-transform: capitalize;
+        font-family: "Recursive", sans-serif;
+        color: #2a025a;
+    }
+    .pop-up {
+        /* margin: 100px 100px;
+        margin-right: 100px; */
+        padding: 10px;
+        text-align: center;
+    }
+}
+@media screen  and (max-width:  375px) {
+    .name, .email {
+        padding: 14px 8px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        width: 160px;
+        font-family: "Lato", sans-serif;
+    }
+    .email {
+        margin-left: 4px;
+    }
+    .subject {
+        padding: 14px 8px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        width: 324px;
+        font-family: "Lato", sans-serif;
+    }
+    textarea {
+        width: 328px;
+        height: 113px;
+        border-radius: 5px;
+    }
+}
+@media screen  and (max-width:  360px) {
+    
+}
+
+

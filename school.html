@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lerniio Dashboard</title>
+    <link rel="stylesheet" href="Dashboard.css" />
+    <!-- the google fonts -->
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <!-- the second font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <!-- recursive -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Recursive:wght@300..1000&display=swap"
+      rel="stylesheet"
+    />
+    <!-- external cdn - Frameworks -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Extras -->
+  </head>
+  <body>
+    <!-- the school template -->
+    <!-- the school template -->
+    <!-- the navigation section of the dashboard -->
+    <section class="navigation-section">
+      <div>
+        <header class="nav-header">
+          <div class="Dashboard-container">
+            <nav>
+              <div class="logo">
+                <svg
+                  width="50px"
+                  height="50px"
+                  viewBox="0 -37 256 256"
+                  version="1.1"
+                  xmlns="http://www.w3.org/2000/svg"
+                  xmlns:xlink="http://www.w3.org/1999/xlink"
+                  preserveAspectRatio="xMidYMid"
+                  fill="#2a025a"
+                >
+                  <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                  <g
+                    id="SVGRepo_tracerCarrier"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  ></g>
+                  <g id="SVGRepo_iconCarrier">
+                    <g>
+                      <path
+                        d="M216.357806,174.771308 C255.135865,205.772152 279.979747,113.201688 218.194093,96.1350211 C166.345992,81.7687764 114.17384,106.396624 61.8936709,163.861603 C61.8936709,163.861603 158.460759,128.540084 216.357806,174.771308 Z"
+                        fill="#7e77b1"
+                      ></path>
+                      <path
+                        d="M62.7578059,163.105485 C99.9156118,124.54346 161.701266,81.5527426 219.274262,97.4312236 C232.668354,101.211814 242.17384,108.98903 248.330802,118.278481 L193.890295,8.42531646 C186.11308,-3.99662447 166.237975,-1.40421941 155.004219,8.10126582 L11.1257384,128.648101 C-1.9443038,139.881857 -2.70042194,159.864979 9.39746835,171.962869 C20.0911392,182.65654 37.049789,183.628692 48.8236287,174.123207 L62.7578059,163.105485 Z"
+                        fill="#fff"
+                      ></path>
+                    </g>
+                  </g>
+                </svg>
+                Lerniio
+              </div>
+              <div class="menu-Ham">
+                <svg
+                  width="32px"
+                  height="18px"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <g fill="#2a025a" fill-rule="evenodd">
+                    <path d="M0 0h32v2H0zM0 8h32v2H0zM0 16h32v2H0z" />
+                  </g>
+                </svg>
+              </div>
+              <ul>
+                <li>
+                  <img src="./asset/home-svgrepo-com.svg" alt="" />
+                  <a href="./Dashboard.html">Home</a>
+                </li>
+                <li class="search-nav">
+                  <img src="./asset/search-globe-svgrepo-com.svg" alt="" />
+                  <a href="#">search</a>
+                </li>
+                <li>
+                  <img src="./asset/school-svgrepo-com.svg" alt="" />
+                  <a href="./school.html">Schools</a>
+                </li>
+                <li>
+                  <img src="./asset/exam-svgrepo-com.svg" alt="" />
+                  <a href="./examination.html">Examination</a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </header>
+      </div>
+      <div class="sign-out">
+        <ul>
+          <li>
+            <img src="./asset/help-desk-log-svgrepo-com.svg" alt="" />
+            <a href="#">help</a>
+          </li>
+          <li>
+            <img src="./asset/log-out-svgrepo-com.svg" alt="" />
+            <a href="#">Log out</a>
+          </li>
+        </ul>
+      </div>
+    </section>
+    <!-- the main section of the Dasboard page -->
+    <section class="main-content">
+      <!-- the search contents -->
+      <div class="content-search">
+        <div class="search-icon">
+          <img src="./asset/search-alt-2-svgrepo-com.svg" alt="" />
+          <form action="" class="form-search">
+            <input
+              class="search-name"
+              type="search"
+              name="searchcontents"
+              placeholder="search"
+            />
+          </form>
+        </div>
+        <!-- the light theme -->
+        <div class="light-person">
+          <img src="./asset/light-svgrepo-com.svg" alt="" />
+          <img src="./asset/image-thomas.jpg" alt="" />
+        </div>
+      </div>
+      <div class="display-uni">
+        <div class="filtering-header">
+          <h1>Universities in Nigeria</h1>
+          <div class="filterss">
+            <p>All</p>
+            <p>Federal</p>
+            <p>state</p>
+            <p>private</p>
+            <p>poly</p>
+          </div>
+          <div class="filterss-2">
+            <p class=""><a href="#courses">Courses</a></p>
+            <p class=""><a href="#fees">Fees</a></p>
+            <p class=""><a href="#accomodation">Accomodation</a></p>
+            <p class=""><a href="#administration">Administration</a></p>
+            <p class=""><a href="#admission">Admission</a></p>
+            <p class=""><a href="#students-life">student</a></p>
+            <p class="back-btn">Back</p>
+          </div>
+        </div>
+
+        <div class="filteringss-all">
+          <!-- <div class="filtering">
+                <p class="school-name">University of lagos</p>
+                <p>300 courses</p>
+                <p>15 Dept</p>
+                <p>Jamb/wassce</p>
+                <p>Lagos state</p>
+              </div>
+              <div class="filtering">
+                <p class="school-name">University of benin</p>
+                <p>350 courses</p>
+                <p>10 Dept</p>
+                <p>Jamb/wassce</p>
+                <p>Benin state</p>
+              </div>
+              <div class="filtering">
+                <p class="school-name">Caleb</p>
+                <p>200 courses</p>
+                <p>11 Dept</p>
+                <p>Private</p>
+                <p>Lagos state</p>
+              </div>
+              <div class="filtering">
+                <p class="school-name">Yabatech</p>
+                <p>200 courses</p>
+                <p>15 Dept</p>
+                <p>Jamb/wassce</p>
+                <p>Lagos state</p>
+              </div>
+      
+              <div class="filtering">
+                <p class="school-name">Unilag</p>
+                <p>300 courses</p>
+                <p>15 Dept</p>
+                <p>Jamb/wassce</p>
+                <p>Lagos state</p>
+              </div>
+              <div class="filtering">
+                <p class="school-name">Uniben</p>
+                <p>350 courses</p>
+                <p>10 Dept</p>
+                <p>Jamb/wassce</p>
+                <p>Benin state</p>
+              </div>
+              <div class="filtering">
+                <p class="school-name">Caleb</p>
+                <p>200 courses</p>
+                <p>11 Dept</p>
+                <p>Private</p>
+                <p>Lagos state</p>
+              </div>
+              <div class="filtering">
+                <p class="school-name">Yabatech</p>
+                <p>200 courses</p>
+                <p>15 Dept</p>
+                <p>Jamb/wassce</p>
+                <p>Lagos state</p>
+              </div>
+      
+              <div class="filtering">
+                <p class="school-name">Unilag</p>
+                <p>300 courses</p>
+                <p>15 Dept</p>
+                <p>Jamb/wassce</p>
+                <p>Lagos state</p>
+              </div>
+              <div class="filtering">
+                <p class="school-name">Uniben</p>
+                <p>350 courses</p>
+                <p>10 Dept</p>
+                <p>Jamb/wassce</p>
+                <p>Benin state</p>
+              </div>
+              <div class="filtering">
+                <p class="school-name">Caleb</p>
+                <p>200 courses</p>
+                <p>11 Dept</p>
+                <p>Private</p>
+                <p>Lagos state</p>
+              </div>
+              <div class="filtering">
+                <p class="school-name">Yabatech</p>
+                <p>200 courses</p>
+                <p>15 Dept</p>
+                <p>Jamb/wassce</p>
+                <p>Lagos state</p>
+              </div> -->
+        </div>
+
+        <div class="filtering-btn">
+          <div class="btn-svg">
+            <img src="https://img.freepik.com/free-vector/magnifying-glass-with-file-searching_52683-22967.jpg?t=st=1718622811~exp=1718626411~hmac=38d887d123da82d00cfb55c4c387c7cd9d1b75213de085fad83c9364faf85bc8&w=740" alt="">
+          </div>
+          <div class="buttin-btn">
+            <button class="searches-btn">search</button>
+          </div>
+        </div>
+        
+        <!-- the filtering template -->
+        <div class="filtering-template">
+          <!-- the template would appear in a grid pattern -->
+          <div class="grid-al">
+            <div class="filter-grid filtgrid-1">
+              <h1>Courses</h1>
+              <p> 
+                The University of Lagos (UNILAG) offers a variety of courses and programs that lead to    officially recognized higher education degrees, including pre-bachelor's degrees (such as certificates, diplomas, associate, or foundation), bachelor's degrees, master's degrees, and doctorate degrees across several fields of study. Unilag also employs a selective admission policy, which is based on entrance examinations and students' past academic records and grades. With an acceptance rate ranging from 10-19%, UNILAG is considered highly selective. The university welcomes applications from international students. below are the courses offered.
+              </p>
+              <!-- the button -->
+              <div class="courses-btn">
+                <button class="course-button"><a href="">courses</a></button>
+              </div>
+            </div>
+            <div class="filter-grid filtgrid-2">
+              <div>
+                <img 
+                src="https://unilag.edu.ng/wp-content/uploads/2018/08/Untitled-5-1.jpg"
+                alt=""
+              />
+              </div>
+              <div class="prev-next">
+                <div class="prev-btn">
+                  <img src="./asset/back-svgrepo-com.svg" alt="">
+                </div>
+                <div>
+                  <img src="./asset/circle-svgrepo-com.svg" alt="">
+                  <img src="./asset/circle-svgrepo-com.svg" alt="">
+                  <img src="./asset/circle-svgrepo-com.svg" alt="">
+                  <img src="./asset/circle-svgrepo-com.svg" alt="">
+                </div>
+                <div class="next-btn">
+                  <svg width="30px" height="30px" viewBox="0 0 1024 1024" fill="#2a025a" class="icon" version="1.1" xmlns="http://www.w3.org/2000/svg" stroke="#2a025a" transform="matrix(-1, 0, 0, 1, 0, 0)"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M669.6 849.6c8.8 8 22.4 7.2 30.4-1.6s7.2-22.4-1.6-30.4l-309.6-280c-8-7.2-8-17.6 0-24.8l309.6-270.4c8.8-8 9.6-21.6 2.4-30.4-8-8.8-21.6-9.6-30.4-2.4L360.8 480.8c-27.2 24-28 64-0.8 88.8l309.6 280z" fill=""></path></g></svg>
+                </div>
+              </div>
+            </div>
+            <div class="filter-grid filtgrid-3">
+              <section id="fees">
+                <div class="container">
+                  <h2>School Fees</h2>
+                  <ul>
+                    <li>
+                      New Students Total Fees: ₦116,325.00 (excluding
+                      Lab/Studio) and ₦166,300.00 (including Lab/Studio)
+                    </li>
+                    <li>
+                      Returning Students Total Fees:₦80,750.00 (excluding
+                      Lab/Studio) ₦120,250.00 (including Lab/Studio)
+                    </li>
+                    <li>Medical/Pharmacy Students Total Fees : ₦170,250.00</li>
+                  </ul>
+                </div>
+              </section>
+
+              <section id="accommodation">
+                <div class="container">
+                  <h2>Accommodation</h2>
+                  <p>
+                    UNILAG has a mix of male, female, and unisex hostels. Each
+                    hostel varies in amenities and conditions:
+                  </p>
+                  <ul>
+                    <li>male hostels</li>
+                    <p>
+                      Include Eni Njoku, King Jaja, Mariere, and Sodeinde Halls,
+                      among others. They range from two-man to sixteen-man rooms
+                      and offer facilities like common rooms and regular water
+                      supply.
+                    </p>
+                    <li>female hostels</li>
+                    <p>
+                      Include Fagunwa, Honours, Kofo Ademola, Madam Tinubu, and
+                      others. They typically have four occupants per room and
+                      face varying conditions regarding cleanliness and water
+                      supply
+                    </p>
+                  </ul>
+                </div>
+              </section>
+
+              <section id="administration">
+                <div class="container">
+                  <h2>Administration</h2>
+                  <p></p>
+                  <ul>
+                    <li>Vice Chancellor: Prof. Oluwatoyin Ogundipe</li>
+                    <li>Registrar: Dr. Folasade Ipaye</li>
+                  </ul>
+                </div>
+              </section>
+
+              <section id="admission">
+                <div class="container">
+                  <h2>Admission Information</h2>
+                  <p>
+                    Admission to full-time undergraduate programs at the
+                    University of Lagos is exclusively through the Unified
+                    Tertiary Matriculation Examination (UTME) and Direct Entry
+                    (DE). Applicants must have at least five (5) credits in
+                    O'Level or equivalent qualifications as specified by the
+                    relevant department. A minimum UTME score of 200 is
+                    required, and candidates' details must be submitted to the
+                    University by the Joint Admissions and Matriculation Board
+                    (JAMB). Additionally, candidates must participate in the
+                    University POST-UTME Examination and achieve the necessary
+                    minimum score. The University Admissions Office is
+                    responsible for processing full-time undergraduate
+                    admissions only. Other programs, including Foundation,
+                    Diploma, Distance Learning Institute (DLI), Postgraduate,
+                    and evening courses, are managed by other university
+                    departments. Candidates must be at least sixteen (16) years
+                    old by October 31st of the admission year.
+                  </p>
+                  <ul>
+                    <li>JAMB Cut-off Mark: 200</li>
+                    <li>JAMB: 50%</li>
+                    <li>O'Level: 20%</li>
+                    <li>PUTME: 30%</li>
+                    <li>Application Deadline: July 31</li>
+                  </ul>
+                  <h2>warnings</h2>
+                  <p>
+                    The University of Lagos does not require any payment for
+                    admission processing and does not use any agents for
+                    admissions. Prospective students are advised not to deal
+                    with touts. Submission of forged documents will result in
+                    the forfeiture of admission upon discovery.
+                  </p>
+                </div>
+              </section>
+
+              <section id="student-life">
+                <div class="container">
+                  <h2>Student Life</h2>
+                  <p></p>
+                  <ul>
+                    <li>Sports and Recreation</li>
+                    <li>Student Union Government</li>
+                    <li>Clubs and Societies</li>
+                  </ul>
+                </div>
+              </section>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <script src="apifile.js"></script>
+    <script src="school.js"></script>
+  </body>
+</html>
