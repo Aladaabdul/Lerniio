@@ -216,12 +216,12 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-    const apiEndpoint = 'https://edutech-hmv7.onrender.com/v1/api/school'; // Replace with your actual API endpoint
+    const apiEndpoint = 'https://young-secretary-shrill-sun-production.pipeops.app/v1/api/school/'; // Replace with your actual API endpoint
 
     // Function to fetch data from the API
     async function fetchSchools(category='') {
         try {
-            const url = category ? `https://edutech-hmv7.onrender.com/v1/api/school/schooltype/${category}` : apiEndpoint;
+            const url = category ? `https://young-secretary-shrill-sun-production.pipeops.app/v1/api/school/schooltype/${category}` : apiEndpoint;
 
             const response = await fetch(url);
             console.log(response)
