@@ -1,5 +1,5 @@
 const express = require("express");
-const PORT = 8000
+const PORT = process.env.PORT || 8000
 const { connectTomongo } = require("./db")
 const userRouter = require("./routes/user-routes")
 const schoolRouter = require("./routes/school-routes")
