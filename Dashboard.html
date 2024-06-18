@@ -41,17 +41,17 @@
                                 <img src="./asset/home-svgrepo-com.svg" alt="">
                                 <a href="./Dashboard.html">Home</a>
                             </li>
-                            <li class="search-nav">
+                            <li>
                                 <img src="./asset/search-globe-svgrepo-com.svg" alt="">
                                 <a href="#">search</a>
                             </li>
                             <li>
                                 <img src="./asset/school-svgrepo-com.svg" alt="">
-                                <a href="./school.html">Schools</a>
+                                <a href="#">Schools</a>
                             </li>
                             <li>
                                 <img src="./asset/exam-svgrepo-com.svg" alt="">
-                                <a href="./examination.html">Examination</a>
+                                <a href="#">Examination</a>
                             </li>    
                         </ul>
                     </nav>
@@ -105,7 +105,7 @@
                         Get to know more schools, meet more people, information needed
                         and all it's admission requirements.
                     </p>
-                    <button class="cont-btn"><a href="">Learn more</a></button>
+                    <button class="cont-btn">Learn more</button>
                 </div>
             </div>
             <!-- Learn about Examinations -->
@@ -124,7 +124,7 @@
                         Learn more about different examinations bodies in Nigeria. Know it's requirements,
                         it's subjects dates and curriculums.
                     </p>
-                    <button class="cont-btn"><a href="./examination.html">Learn more</a></button>
+                    <button class="cont-btn">Learn more</button>
                 </div>
             </div>
             <!-- Get exam curriculums -->
@@ -143,7 +143,7 @@
                         Be informed about what you want to study, why you want to study it, 
                         and the opportunities surrounding the course.
                     </p>
-                    <button class="cont-btn"><a href="./school.html">Learn more</a></button>
+                    <button class="cont-btn">Learn more</button>
                 </div>
             </div>
             <!-- a scorll effect of different layers of academic contents -->
@@ -158,19 +158,19 @@
             <div class="filtered filtered-1">
                     <h1>Top university</h1>
                 <div class="topuni-lists">
-                        <div class="uni-1">
+                        <div class="uni-1" id="federal-universities">
                             <p>Federal universities</p>
                         </div>
-                        <div class="uni-1">
+                        <div class="uni-1" id="state-universities">
                             <p>State Universities</p>
                         </div>
-                        <div class="uni-1">
+                        <div class="uni-1" id="private-universities">
                             <p>Private Universities</p>
                         </div>
-                        <div class="uni-1">
+                        <div class="uni-1"  id="colleges-of-education">
                             <p>Colleges of Education</p>
                         </div>
-                        <div class="uni-1">
+                        <div class="uni-1" id="polytechnic">
                             <p>Polythecnic Universities</p>
                         </div>
                     </div>
@@ -178,7 +178,7 @@
             </div>
             <div class="filtered filtered-2">
                 <!-- the list of university -->
-                <div class="filtering-header">
+                <!-- <div class="filtering-header">
                     <h1>Universities in Nigeria</h1>
                     <h5>View all</h5>
                 </div>
@@ -210,83 +210,71 @@
                     <p>Jamb/wassce</p>
                     <p>Lagos state</p>
                  </div>
-            </div>
+            </div> -->
         </section>
      </section>
-    <!-- the mobile responsive template -->
-    <setion class="mobile-Dashboard">
-        <!-- the mobile responsive view begins from here on -->
-         <nav class="mobile-nav">
-            <div class="logo">
-                <svg width="50px" height="50px" viewBox="0 -37 256 256" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid" fill="#2a025a"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g> <path d="M216.357806,174.771308 C255.135865,205.772152 279.979747,113.201688 218.194093,96.1350211 C166.345992,81.7687764 114.17384,106.396624 61.8936709,163.861603 C61.8936709,163.861603 158.460759,128.540084 216.357806,174.771308 Z" fill="#7e77b1"> </path> <path d="M62.7578059,163.105485 C99.9156118,124.54346 161.701266,81.5527426 219.274262,97.4312236 C232.668354,101.211814 242.17384,108.98903 248.330802,118.278481 L193.890295,8.42531646 C186.11308,-3.99662447 166.237975,-1.40421941 155.004219,8.10126582 L11.1257384,128.648101 C-1.9443038,139.881857 -2.70042194,159.864979 9.39746835,171.962869 C20.0911392,182.65654 37.049789,183.628692 48.8236287,174.123207 L62.7578059,163.105485 Z" fill="#2a025a"> </path> </g> </g></svg>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+    const apiEndpoint = 'https://edutech-hmv7.onrender.com/v1/api/school'; // Replace with your actual API endpoint
+
+    // Function to fetch data from the API
+    async function fetchSchools(category='') {
+        try {
+            const url = category ? `https://edutech-hmv7.onrender.com/v1/api/school/schooltype/${category}` : apiEndpoint;
+
+            const response = await fetch(url);
+            console.log(response)
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+             const schools = await response.json();
+             console.log(schools.data)
+             const data=  schools.data
+             renderSchools(data);
+        } catch (error) {
+            console.error('Failed to fetch schools:', error);
+        }
+    }
+
+    // Function to render schools in the HTML
+    function renderSchools(data) {
+        const schoolsContainer = document.querySelector('.filtered.filtered-2');
+        
+        // Clear any existing content
+        schoolsContainer.innerHTML = `
+            <div class="filtering-header">
+                <h1>Universities in Nigeria</h1>
+                <h5>View all</h5>
             </div>
-            <!-- the navigation of the mobile responsive -->
-            
-            <div class="mobile-search-icon">
+        `;
 
-            </div>
-            <!-- the mobile navigation lists icons -->
-         </nav>
-         <div class="mobile-list">
-            <ul>
-                <li class="mobile-navlist home-list"><a href="#">
-                    <svg width="20px" height="20px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="">
+        // Add new content
+        data.forEach(school => {
+            const schoolElement = document.createElement('div');
+            schoolElement.classList.add('filtering');
+            schoolElement.innerHTML = `
+                <p class="school-name">${school.shortName}</p>
+                <p>${school.shortName}</p>
+                <p>${school.schoolName}</p>
+                <p>${school.courses.length}  courses</p>
+                <p>${school.location}</p>
+            `;
+            schoolsContainer.appendChild(schoolElement);
+        });
+    }
 
-                        <g id="SVGRepo_bgCarrier" stroke-width="0"/>
-                        
-                        <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"/>
-                        
-                        <g id="SVGRepo_iconCarrier"> <path fill-rule="evenodd" clip-rule="evenodd" d="M4.18753 11.3788C4.03002 11.759 4 11.9533 4 12V20.0018C4 20.5529 4.44652 21 5 21H8V15C8 13.8954 8.89543 13 10 13H14C15.1046 13 16 13.8954 16 15V21H19C19.5535 21 20 20.5529 20 20.0018V12C20 11.9533 19.97 11.759 19.8125 11.3788C19.6662 11.0256 19.4443 10.5926 19.1547 10.1025C18.5764 9.1238 17.765 7.97999 16.8568 6.89018C15.9465 5.79788 14.9639 4.78969 14.0502 4.06454C13.5935 3.70204 13.1736 3.42608 12.8055 3.2444C12.429 3.05862 12.1641 3 12 3C11.8359 3 11.571 3.05862 11.1945 3.2444C10.8264 3.42608 10.4065 3.70204 9.94978 4.06454C9.03609 4.78969 8.05348 5.79788 7.14322 6.89018C6.23505 7.97999 5.42361 9.1238 4.8453 10.1025C4.55568 10.5926 4.33385 11.0256 4.18753 11.3788ZM10.3094 1.45091C10.8353 1.19138 11.4141 1 12 1C12.5859 1 13.1647 1.19138 13.6906 1.45091C14.2248 1.71454 14.7659 2.07921 15.2935 2.49796C16.3486 3.33531 17.4285 4.45212 18.3932 5.60982C19.3601 6.77001 20.2361 8.0012 20.8766 9.08502C21.1963 9.62614 21.4667 10.1462 21.6602 10.6134C21.8425 11.0535 22 11.5467 22 12V20.0018C22 21.6599 20.6557 23 19 23H16C14.8954 23 14 22.1046 14 21V15H10V21C10 22.1046 9.10457 23 8 23H5C3.34434 23 2 21.6599 2 20.0018V12C2 11.5467 2.15748 11.0535 2.33982 10.6134C2.53334 10.1462 2.80369 9.62614 3.12345 9.08502C3.76389 8.0012 4.63995 6.77001 5.60678 5.60982C6.57152 4.45212 7.65141 3.33531 8.70647 2.49796C9.2341 2.07921 9.77521 1.71454 10.3094 1.45091Z" fill="#2a025a"/> </g>
-                        
-                        </svg>
-                </a></li>
-                <li class="mobile-navlist search-list"><a href="#">
-                    <svg width="20px" height="20px" viewBox="-0.5 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
 
-                        <g id="SVGRepo_bgCarrier" stroke-width="0"/>
-                        
-                        <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"/>
-                        
-                        <g id="SVGRepo_iconCarrier"> <path d="M22 11.8201C22 9.84228 21.4135 7.90885 20.3147 6.26436C19.2159 4.61987 17.6542 3.33813 15.8269 2.58126C13.9996 1.82438 11.9889 1.62637 10.0491 2.01223C8.10927 2.39808 6.32748 3.35052 4.92896 4.74904C3.53043 6.14757 2.578 7.92935 2.19214 9.86916C1.80629 11.809 2.00436 13.8197 2.76123 15.6469C3.51811 17.4742 4.79985 19.036 6.44434 20.1348C8.08883 21.2336 10.0222 21.8201 12 21.8201" stroke="#2a025a" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/> <path d="M2 11.8201H22" stroke="#2a025a" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/> <path d="M12 21.8201C10.07 21.8201 8.5 17.3401 8.5 11.8201C8.5 6.30007 10.07 1.82007 12 1.82007C13.93 1.82007 15.5 6.30007 15.5 11.8201" stroke="#2a025a" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/> <path d="M18.3691 21.6901C20.3021 21.6901 21.8691 20.1231 21.8691 18.1901C21.8691 16.2571 20.3021 14.6901 18.3691 14.6901C16.4361 14.6901 14.8691 16.2571 14.8691 18.1901C14.8691 20.1231 16.4361 21.6901 18.3691 21.6901Z" stroke="#2a025a" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/> <path d="M22.9998 22.8202L20.8398 20.6702" stroke="#2a025a" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/> </g>
-                        
-                        </svg>
-                </a></li>
-                <li class="mobile-navlist schoolList"><a href="#">
-                    <svg width="20px" height="20px" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" fill="#000000">
 
-                        <g id="SVGRepo_bgCarrier" stroke-width="0"/>
-                        
-                        <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"/>
-                        
-                        <g id="SVGRepo_iconCarrier">
-                        
-                        <path fill="#2a025a" d="M224 128v704h576V128H224zm-32-64h640a32 32 0 0 1 32 32v768a32 32 0 0 1-32 32H192a32 32 0 0 1-32-32V96a32 32 0 0 1 32-32z"/>
-                        
-                        <path fill="#2a025a" d="M64 832h896v64H64zm256-640h128v96H320z"/>
-                        
-                        <path fill="#2a025a" d="M384 832h256v-64a128 128 0 1 0-256 0v64zm128-256a192 192 0 0 1 192 192v128H320V768a192 192 0 0 1 192-192zM320 384h128v96H320zm256-192h128v96H576zm0 192h128v96H576z"/>
-                        
-                        </g>
-                        
-                        </svg>
-                </a></li>
-                <li class="mobile-navlist examinatioonlist"><a href="#">
-                    <svg fill="#2a025a" height="20px" width="20px" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 508 508" xml:space="preserve" stroke="#ffffff">
+    document.getElementById('federal-universities').addEventListener('click', () => fetchSchools('federal'));
+    document.getElementById('state-universities').addEventListener('click', () => fetchSchools('state'));
+    document.getElementById('private-universities').addEventListener('click', () => fetchSchools('private'));
+    document.getElementById('colleges-of-education').addEventListener('click', () => fetchSchools('colleges'));
+     document.getElementById('polytechnic').addEventListener('click', () => fetchSchools('polytechnic'));
+    // Fetch and render the schools on page load
+    fetchSchools();
+});
 
-                        <g id="SVGRepo_bgCarrier" stroke-width="0"/>
-                        
-                        <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"/>
-                        
-                        <g id="SVGRepo_iconCarrier"> <g> <g> <path d="M293.7,70.302H168.1c-7.8,0-14.1,6.3-14.1,14.1c0,7.8,6.3,14.1,14.1,14.1h125.6c7.8,0,14.1-6.3,14.1-14.1 C307.8,76.602,301.5,70.302,293.7,70.302z"/> </g> </g> <g> <g> <path d="M293.7,142.402H75.5c-7.8,0-14.1,6.3-14.1,14.1c-0.1,7.8,6.3,14.1,14.1,14.1h218.2c7.8,0,14.1-6.3,14.1-14.1 S301.5,142.402,293.7,142.402z"/> </g> </g> <g> <g> <path d="M205.3,214.502H75.5c-7.8,0-14.1,6.3-14.1,14.1c0,7.8,6.3,14.1,14.1,14.1h129.9c7.7,0,14-6.3,14-14.1 S213.1,214.502,205.3,214.502z"/> </g> </g> <g> <g> <path d="M173.9,358.703H75.5c-7.8,0-14.1,6.3-14.1,14.1s6.3,14.1,14.1,14.1h98.4c7.8,0,14.1-6.3,14.1-14.1 C188,365.003,181.7,358.703,173.9,358.703z"/> </g> </g> <g> <g> <path d="M168.1,286.602H75.5c-7.8,0-14.1,6.3-14.1,14.1c-0.1,7.8,6.3,14.1,14.1,14.1h92.6c7.8,0,14.1-6.3,14.1-14.1 C182.2,292.902,175.9,286.602,168.1,286.602z"/> </g> </g> <g> <g> <path d="M442.8,466.602c39.3-26.7,65.2-71.7,65.2-122.7c0-40-16-76.3-41.8-103l6.7-6.7l3.8,3.8c5.7,5.7,14.9,5,20,0 c5.5-5.5,5.5-14.5,0-20l-27.7-27.4c-5.5-5.5-14.4-5.5-20,0c-5.5,5.5-5.5,14.5,0,20l3.8,3.8l-8.2,8.2 c-21.7-15.2-47.5-24.6-75.5-26.4v-182.1c0-7.8-6.3-14.1-14.1-14.1H108.6c-3.7,0-7.3,1.5-10,4.1l-94.5,94.5 c-2.6,2.6-4.1,6.2-4.1,10v327.6c0,7.8,6.3,14.1,14.1,14.1h242.8c6.1,5.9,12.6,11.3,19.6,16.1l-17.7,17.7c-5.5,5.5-5.5,14.4,0,20 c4.6,4.7,14.4,5.6,20,0l23.6-23.5c17.7,7.5,37.1,11.6,57.5,11.6c20.2,0,39.5-4.1,57.1-11.5l23.5,23.5c5.5,5.5,15.3,4.6,20,0 c5.5-5.5,5.5-14.5,0-20L442.8,466.602z M94.5,48.203v46.3H48.2L94.5,48.203z M28.2,422.102v-299.4h80.4c7.8,0,14.1-6.3,14.1-14.1 v-80.4h218.2v168.8c-72.8,9.4-129.2,71.6-129.2,146.9c0,28.7,8.3,55.4,22.5,78.2H28.2z M359.8,463.902 c-66.1,0-119.9-53.8-119.9-120s53.8-120,119.9-120s119.9,53.8,119.9,120C479.8,410.102,426,463.902,359.8,463.902z"/> </g> </g> <g> <g> <path d="M398.3,329.703h-24.6v-66.8c0-7.8-6.3-14.1-14.1-14.1c-7.8,0-14.1,6.3-14.1,14.1v80.9c0,7.8,6.3,14.1,14.1,14.1h38.7 c7.8,0,14.1-6.3,14.1-14.1C412.4,336.003,406.1,329.703,398.3,329.703z"/> </g> </g> </g>
-                        
-                        </svg>
-                </a></li>
-            </ul>
-         </div>
-         <!-- the main welcome dashboard of the navigation -->
-    </setion>
-
-    <script src="apifile.js"></script>
-    <script src="Dashboard.js"></script>
+    </script>
 </body>
 </html>
