@@ -8,17 +8,19 @@ const schoolSchema = new Schema({
         type: String,
         unique: true,
         trim: true,
+        // lowercase: true,
         required: [true, '  school name  is  required']
     },
     shortName: {
         type: String,
+        default: '',  // Ensure shortName is unique
         unique: true,
-        required: [true, '  short name  is  required']
     },
 
     schoolDescription: {
         type: String,
         trim: true,
+        default: "school  description",
         required: [true, 'description is  required']
 
     },
@@ -45,22 +47,80 @@ const schoolSchema = new Schema({
         }
 
     },
+
     schooltype: {
         type: String,
         required: [true, "SchoolType is  required"],
-        trim: true,
-        default: "federal"
+        trim: true
     },
     location: {
         type: String,
-        required: [true, "location is  required"],
+        default: '',
+        //required: [true, "location is  required"],
         trim: true
+    },
+    vice_chancellor: {
+        type: String,
+        default: ''
+    },
+    year_of_establishment: {
+        type: String,  // Assuming year can be stored as string
+        trim: true,
+
+    },
+
+    url: {
+        type: String,
+        default: ''
     },
     courses: {
 
         type: Array,
         trim: true,
-        default: [],
+        default: [
+            "Computer Science",
+            "Electrical Engineering",
+            "Medicine and Surgery",
+            "Business Administration",
+            "Mass Communication",
+            "Law",
+            "Accountancy",
+            "Microbiology",
+            "Political Science",
+            "Chemical Engineering",
+            "Economics",
+            "Mechanical Engineering",
+            "Biochemistry",
+            "Civil Engineering",
+            "Psychology",
+            "Pharmacy",
+            "Sociology",
+            "English Language",
+            "International Relations",
+            "History and International Studies",
+            "Geology",
+            "Dentistry",
+            "Architecture",
+            "Industrial Chemistry",
+            "Fine and Applied Arts",
+            "Botany",
+            "Physics",
+            "Statistics",
+            "Agriculture",
+            "Educational Foundations",
+            "Library and Information Science",
+            "Food Science and Technology",
+            "Medical Laboratory Science",
+            "Pharmacology",
+            "Physiology",
+            "Anatomy",
+            "Medical Physics",
+            "Pathology",
+            "Estate Management",
+            "Public Health",
+            "Clinical Pharmacy",
+            "Agric Extension and Management",
+        ],
         required: [true, " courses is required "]
 
     }

@@ -6,6 +6,9 @@ exports.createSchool = async (req, res, next) => {
         schoolName,
         schoolDescription,
         shortName,
+        year_of_establishment,
+        vice_chancellor,
+        url,
         schoolrequirement: {
             schoolsitting,
             jamb,
@@ -17,6 +20,9 @@ exports.createSchool = async (req, res, next) => {
     const createSchool = new School({
         schoolName,
         shortName,
+        vice_chancellor,
+        year_of_establishment,
+        url,
         schoolDescription,
         schoolrequirement: {
             schoolsitting,
@@ -29,12 +35,14 @@ exports.createSchool = async (req, res, next) => {
     })
 
     try {
-
-        const school = await createSchool.save()
+        console.log("Incoming request body:", req.body);
+        const school = await School.create(req.body)
         if (school) {
+
             return res.status(201).json({
                 message: "school  created ",
-                data: school
+                data: school,
+
             })
 
         }
@@ -65,7 +73,7 @@ exports.getschool = async (req, res, next) => {
     try {
 
         //  get all school  
-        const getschool = await School.find().select('schoolName location  schoolDescription ')
+        const getschool = await School.find().select('schoolName location shortName  courses schoolDescription ')
         return res.status(200).json({
             message: ' all  school data found',
             data: getschool
