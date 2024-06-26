@@ -63,6 +63,11 @@ const schoolSchema = new Schema({
         type: String,
         default: ''
     },
+    registra: {
+        type: String,
+        default: ''
+
+    },
     year_of_establishment: {
         type: String,  // Assuming year can be stored as string
         trim: true,
@@ -72,6 +77,12 @@ const schoolSchema = new Schema({
     url: {
         type: String,
         default: ''
+    },
+
+    fees: {
+        newStudent: { type: String },
+        returningStudent: { type: String },
+        medicalStudent: { type: String }
     },
     courses: {
 

@@ -2,37 +2,37 @@ const School = require('../model/School')
 
 
 exports.createSchool = async (req, res, next) => {
-    const {
-        schoolName,
-        schoolDescription,
-        shortName,
-        year_of_establishment,
-        vice_chancellor,
-        url,
-        schoolrequirement: {
-            schoolsitting,
-            jamb,
-            postUtme,
-        },
-        location,
-        schooltype,
-        courses } = req.body
-    const createSchool = new School({
-        schoolName,
-        shortName,
-        vice_chancellor,
-        year_of_establishment,
-        url,
-        schoolDescription,
-        schoolrequirement: {
-            schoolsitting,
-            jamb,
-            postUtme,
-        },
-        location,
-        schooltype,
-        courses,
-    })
+    // const {
+    //     schoolName,
+    //     schoolDescription,
+    //     shortName,
+    //     year_of_establishment,
+    //     vice_chancellor,
+    //     url,
+    //     schoolrequirement: {
+    //         schoolsitting,
+    //         jamb,
+    //         postUtme,
+    //     },
+    //     location,
+    //     schooltype,
+    //     courses } = req.body
+    // const createSchool = new School({
+    //     schoolName,
+    //     shortName,
+    //     vice_chancellor,
+    //     year_of_establishment,
+    //     url,
+    //     schoolDescription,
+    //     schoolrequirement: {
+    //         schoolsitting,
+    //         jamb,
+    //         postUtme,
+    //     },
+    //     location,
+    //     schooltype,
+    //     courses,
+    // })
 
     try {
         console.log("Incoming request body:", req.body);
