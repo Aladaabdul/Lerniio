@@ -17,6 +17,16 @@ const UserModelSchema = new Schema({
     password: {
         type: String,
         required: true
+    },
+
+    resetToken: {
+        type: String,
+        default: null
+    },
+
+    resetTokenExpires: {
+        type: String,
+        default: null
     }
 })
 
