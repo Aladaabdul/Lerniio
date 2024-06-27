@@ -35,7 +35,9 @@ exports.createSchool = async (req, res, next) => {
     // })
 
     try {
-        console.log("Incoming request body:", req.body);
+        console.log("Incoming request body:", req.body
+
+        );
         const school = await School.create(req.body)
         if (school) {
 
