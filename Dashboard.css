@@ -112,6 +112,10 @@ ul li img {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    width: 100vw;
+    margin: 0px;
+}
+.content-search div {
     margin: 0px;
 }
 .search-icon {
@@ -140,8 +144,8 @@ ul li img {
     margin-right: 2px;
 }
 .light-person {
-    position: relative;
-    left: 85%;
+    /* position: relative;
+    left: 85%; */
     display: flex;
     align-items: center;
 }
@@ -573,15 +577,31 @@ section.filtered-lists {
 }
 /* the desktop responsive styles for 1440px, 1200px 1024px */
 @media screen and (max-width: 1400px) {
-    
+    /* the light person style */
+    /* .light-person {
+        position: relative;
+        left: 60%;
+        display: flex;
+        align-items: center;
+    } */
 }
 
 @media screen and (max-width: 1200px) {
-    
+    /* .light-person {
+        position: relative;
+        left: 40%;
+        display: flex;
+        align-items: center;
+    } */
 }
 
 @media screen and (max-width: 1024px) {
-    
+    /* .light-person {
+        position: relative;
+        left: 18%;
+        display: flex;
+        align-items: center;
+    } */
 }
 /* mobile styles are different */
 @media screen and (max-width: 450px) {
@@ -760,11 +780,18 @@ section.filtered-lists {
         font-weight: 700;
         border-bottom: 1px solid #2a035c17;
     }
+    .filtered h1 {
+        margin: 0px;
+        color: #2a025a;
+        font-size: 28px;
+        font-weight: 700;
+        text-align: center;
+        padding: 10px 5px;
+        padding-bottom: 10px;
+        margin-bottom: 5px;
+    }
     .filtered-2 {
-        /* background-color: #c0ebfc2a; */
-        background-color: #fff;
-        box-shadow: 0px 4px 4px -3px #a3a3a35b;
-        height: fit-content;
+        display: none;
     }
 
     
