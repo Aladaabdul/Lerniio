@@ -9,7 +9,13 @@ const schoolRouter = require("./routes/school-routes")
 const app = express()
 
 connectTomongo();
-app.use(cors())
+
+const corsOrigin = {
+    origin: 'https://cute-mint-shrill-sun-production.pipeops.app/',  //process.env.FRONTEND_URL,    //['http://localhost:5173'], //or whatever port your frontend is using
+    credentials: true,
+}
+app.use(cors(corsOrigin));
+
 app.use(cookieParser())
 app.use(express.json())
 
