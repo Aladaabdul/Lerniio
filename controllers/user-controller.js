@@ -5,7 +5,7 @@ const nodemailer = require("nodemailer")
 const jwt = require("jsonwebtoken");
 require("dotenv").config();
 
-const secretKey = process.env.TOKEN
+const secretKey = process.env.JWT_TOKEN
 
 
 // get all users logic
@@ -57,9 +57,9 @@ async function createUser(req, res) {
         return console.log(error)
     }
 
-    const token = jwt.sign({ userId: user.id, email: user.email }, secretKey , { expiresIn: '1h' });
+    const token = jwt.sign({ userId: user.id, email: user.email }, secretKey, { expiresIn: '1h' });
 
-    return res.status(201).json({user, token, message: "User created Successfully" })
+    return res.status(201).json({ user, token, message: "User created Successfully" })
 }
 
 
@@ -84,9 +84,9 @@ async function Login(req, res) {
         return res.status(400).json({ error: "Incorrect password or email! Try again" })
     }
 
-    const token = jwt.sign({ userId: existingUser.id, email: existingUser.email }, secretKey , { expiresIn: '1h' });
+    const token = jwt.sign({ userId: existingUser.id, email: existingUser.email }, secretKey, { expiresIn: '1h' });
 
-    return res.status(200).json({name: existingUser.username, token, message: "Login Successfully"})
+    return res.status(200).json({ name: existingUser.username, token, message: "Login Successfully" })
 }
 
 
@@ -96,8 +96,8 @@ async function forgotPassword(req, res) {
     let existingUser;
 
     try {
-        existingUser = await userModel.findOne({email})
-    } catch(error) {
+        existingUser = await userModel.findOne({ email })
+    } catch (error) {
         return console.log(error)
     }
 
@@ -112,7 +112,7 @@ async function forgotPassword(req, res) {
 
     try {
         await existingUser.save();
-    } catch(error) {
+    } catch (error) {
         return console.log(error);
     }
 
@@ -142,7 +142,7 @@ async function forgotPassword(req, res) {
 }
 
 
-async function resetPassword (req, res, next) {
+async function resetPassword(req, res, next) {
     const { token, newPassword } = req.body;
 
     let existingUser;
