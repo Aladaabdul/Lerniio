@@ -31,11 +31,20 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <!-- Extras -->
       <script>
-        const token = localStorage.getItem('token');
-          if (!token) {
-          // Redirect to the login page if the token does not exist
-          window.location.href = "login.html";
-          } 
+        document.addEventListener('DOMContentLoaded', (event) => {
+      const token = localStorage.getItem('token');
+      if (!token) {
+        // Redirect to the login page if the token does not exist
+        window.location.href = "login.html";
+      } else {
+        // Retrieve the username from localStorage
+        const username = localStorage.getItem('username');
+        if (username) {
+          // Display the username
+          document.getElementById('username').textContent = username;
+        }
+      }
+    });
       </script>
   </head>
   <body>
