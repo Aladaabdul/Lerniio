@@ -1,5 +1,6 @@
 const express = require("express");
 const PORT = process.env.PORT || 8000
+const cookieParser = require('cookie-parser');
 const { connectTomongo } = require("./db")
 const userRouter = require("./routes/user-routes")
 const schoolRouter = require("./routes/school-routes")
@@ -7,6 +8,7 @@ const schoolRouter = require("./routes/school-routes")
 const app = express()
 
 connectTomongo();
+app.use(cookieParser())
 app.use(express.json())
 
 app.use((req, res, next) => {
