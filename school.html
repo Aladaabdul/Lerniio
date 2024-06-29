@@ -30,6 +30,13 @@
     <!-- external cdn - Frameworks -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <!-- Extras -->
+      <!-- <script>
+        const token = localStorage.getItem('token');
+          if (!token) {
+          // Redirect to the login page if the token does not exist
+          window.location.href = "login.html";
+          } 
+      </script> -->
   </head>
   <body>
     <!-- the school template -->
@@ -113,8 +120,7 @@
           </li>
           <li>
             <img src="./asset/log-out-svgrepo-com.svg" alt="" />
-            <a href="#">Log out</a>
-          </li>
+            <a  class="logout">Log out</a>
         </ul>
       </div>
     </section>
@@ -251,51 +257,98 @@
 
         <div class="filtering-btn">
           <div class="btn-svg">
-            <img src="https://img.freepik.com/free-vector/magnifying-glass-with-file-searching_52683-22967.jpg?t=st=1718622811~exp=1718626411~hmac=38d887d123da82d00cfb55c4c387c7cd9d1b75213de085fad83c9364faf85bc8&w=740" alt="">
+            <img
+              src="https://img.freepik.com/free-vector/magnifying-glass-with-file-searching_52683-22967.jpg?t=st=1718622811~exp=1718626411~hmac=38d887d123da82d00cfb55c4c387c7cd9d1b75213de085fad83c9364faf85bc8&w=740"
+              alt=""
+            />
           </div>
           <div class="buttin-btn">
             <button class="searches-btn">search</button>
           </div>
         </div>
-        
+
         <!-- the filtering template -->
         <div class="filtering-template">
           <!-- the template would appear in a grid pattern -->
           <div class="grid-al">
             <div class="filter-grid filtgrid-1">
-              <h1>Courses</h1>
-              <p> 
-                The University of Lagos (UNILAG) offers a variety of courses and programs that lead to    officially recognized higher education degrees, including pre-bachelor's degrees (such as certificates, diplomas, associate, or foundation), bachelor's degrees, master's degrees, and doctorate degrees across several fields of study. Unilag also employs a selective admission policy, which is based on entrance examinations and students' past academic records and grades. With an acceptance rate ranging from 10-19%, UNILAG is considered highly selective. The university welcomes applications from international students. below are the courses offered.
-              </p>
+
+              <section id="About">
+                <div class="container">
+                  <h2>About</h2>
+                  <p></p>
+                </div>
+              </section>
+              <!-- <h1>About</h1>
+              <p>
+                The University of Lagos (UNILAG) offers a variety of courses and
+                programs that lead to officially recognized higher education
+                degrees, including pre-bachelor's degrees (such as certificates,
+                diplomas, associate, or foundation), bachelor's degrees,
+                master's degrees, and doctorate degrees across several fields of
+                study. Unilag also employs a selective admission policy, which
+                is based on entrance examinations and students' past academic
+                records and grades. With an acceptance rate ranging from 10-19%,
+                UNILAG is considered highly selective. The university welcomes
+                applications from international students. below are the courses
+                offered.
+              </p> -->
               <!-- the button -->
               <div class="courses-btn">
                 <button class="course-button"><a href="">courses</a></button>
               </div>
             </div>
             <div class="filter-grid filtgrid-2">
-              <div>
-                <img 
-                src="https://unilag.edu.ng/wp-content/uploads/2018/08/Untitled-5-1.jpg"
-                alt=""
-              />
-              </div>
+              <!-- <div>
+                <img
+                  src="https://unilag.edu.ng/wp-content/uploads/2018/08/Untitled-5-1.jpg"
+                  alt=""
+                />
+              </div> -->
+              <section id="img">
+                <div class="container">
+                  
+                </div>
               <div class="prev-next">
                 <div class="prev-btn">
-                  <img src="./asset/back-svgrepo-com.svg" alt="">
+                  <img src="./asset/back-svgrepo-com.svg" alt="" />
                 </div>
                 <div>
-                  <img src="./asset/circle-svgrepo-com.svg" alt="">
-                  <img src="./asset/circle-svgrepo-com.svg" alt="">
-                  <img src="./asset/circle-svgrepo-com.svg" alt="">
-                  <img src="./asset/circle-svgrepo-com.svg" alt="">
+                  <img src="./asset/circle-svgrepo-com.svg" alt="" />
+                  <img src="./asset/circle-svgrepo-com.svg" alt="" />
+                  <img src="./asset/circle-svgrepo-com.svg" alt="" />
+                  <img src="./asset/circle-svgrepo-com.svg" alt="" />
                 </div>
                 <div class="next-btn">
-                  <svg width="30px" height="30px" viewBox="0 0 1024 1024" fill="#2a025a" class="icon" version="1.1" xmlns="http://www.w3.org/2000/svg" stroke="#2a025a" transform="matrix(-1, 0, 0, 1, 0, 0)"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M669.6 849.6c8.8 8 22.4 7.2 30.4-1.6s7.2-22.4-1.6-30.4l-309.6-280c-8-7.2-8-17.6 0-24.8l309.6-270.4c8.8-8 9.6-21.6 2.4-30.4-8-8.8-21.6-9.6-30.4-2.4L360.8 480.8c-27.2 24-28 64-0.8 88.8l309.6 280z" fill=""></path></g></svg>
+                  <svg
+                    width="30px"
+                    height="30px"
+                    viewBox="0 0 1024 1024"
+                    fill="#2a025a"
+                    class="icon"
+                    version="1.1"
+                    xmlns="http://www.w3.org/2000/svg"
+                    stroke="#2a025a"
+                    transform="matrix(-1, 0, 0, 1, 0, 0)"
+                  >
+                    <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                    <g
+                      id="SVGRepo_tracerCarrier"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    ></g>
+                    <g id="SVGRepo_iconCarrier">
+                      <path
+                        d="M669.6 849.6c8.8 8 22.4 7.2 30.4-1.6s7.2-22.4-1.6-30.4l-309.6-280c-8-7.2-8-17.6 0-24.8l309.6-270.4c8.8-8 9.6-21.6 2.4-30.4-8-8.8-21.6-9.6-30.4-2.4L360.8 480.8c-27.2 24-28 64-0.8 88.8l309.6 280z"
+                        fill=""
+                      ></path>
+                    </g>
+                  </svg>
                 </div>
               </div>
             </div>
             <div class="filter-grid filtgrid-3">
-              <section id="fees">
+              <!-- <section id="fees">
                 <div class="container">
                   <h2>School Fees</h2>
                   <ul>
@@ -310,9 +363,14 @@
                     <li>Medical/Pharmacy Students Total Fees : ₦170,250.00</li>
                   </ul>
                 </div>
-              </section>
+              </section> -->
+              <section id="fees">
+                <div class="container">
+                  <h2>School Fees</h2>
+                  <ul></ul>
+                </div>
 
-              <section id="accommodation">
+              <!-- <section id="accommodation">
                 <div class="container">
                   <h2>Accommodation</h2>
                   <p>
@@ -336,9 +394,15 @@
                     </p>
                   </ul>
                 </div>
+              </section> -->
+              <section id="accommodation">
+                <div class="container">
+                  <h2>Accommodation</h2>
+                  <ul></ul>
+                </div>
               </section>
 
-              <section id="administration">
+              <!-- <section id="administration">
                 <div class="container">
                   <h2>Administration</h2>
                   <p></p>
@@ -347,9 +411,17 @@
                     <li>Registrar: Dr. Folasade Ipaye</li>
                   </ul>
                 </div>
-              </section>
+              </section> -->
 
-              <section id="admission">
+              <section id="administration">
+                <div class="container">
+                  <h2>Administration</h2>
+                  <ul></ul>
+                </div>
+              </section>
+    
+
+              <!-- <section id="admission">
                 <div class="container">
                   <h2>Admission Information</h2>
                   <p>
@@ -387,9 +459,17 @@
                     the forfeiture of admission upon discovery.
                   </p>
                 </div>
+              </section> -->
+              <section id="admission">
+                <div class="container">
+                  <h2>Admission Information</h2>
+                  <ul></ul>
+                  <h2>Warnings</h2>
+                  <p></p>
+                </div>
               </section>
 
-              <section id="student-life">
+              <!-- <section id="student-life">
                 <div class="container">
                   <h2>Student Life</h2>
                   <p></p>
@@ -399,13 +479,109 @@
                     <li>Clubs and Societies</li>
                   </ul>
                 </div>
+              </section> -->
+              <section id="student-life">
+                <div class="container">
+                  <h2>Student Life</h2>
+                  <ul></ul>
+                </div>
               </section>
             </div>
           </div>
         </div>
       </div>
     </section>
-    <script src="apifile.js"></script>
-    <script src="school.js"></script>
+    <!-- <script src="apifile.js"></script> -->
+     <script src="school.js"></script> 
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const form = document.querySelector(".form-search");
+        const searchInput = document.querySelector(".search-name");
+        const displayUni = document.querySelector(".filteringss-all");
+        const logout=  document.querySelector(".logout");
+
+        function logoutUser(){
+          setTimeout(() => {
+              window.location.href = "index.html";
+            }, 100);
+          localStorage.clear();
+        }
+        logout.addEventListener('click', logoutUser)
+
+        form.addEventListener("submit", async function (event) {
+          event.preventDefault();
+          const query = searchInput.value;
+          const data = await fetchSchoolData(query);
+          updateHTML(data);
+        });
+
+       async function fetchSchoolData(query) {
+           await fetch(
+            `https://young-secretary-shrill-sun-production.pipeops.app/v1/api/school/schoolname/${query}`
+          )
+            .then((response) => response.json())
+            .then((data) => {
+             console.log(data);
+             updateHTML(data)
+            })
+            .catch((error) => console.error("Error fetching data:", error));
+        }
+
+        function updateHTML(data) {
+          //console.log(data.data )
+
+        if ( data.message=="school data not  found") {
+        document.querySelector("#img .container").innerHTML = "Not found";
+        document.querySelector("#About .container p").innerHTML = "Not found";
+        document.querySelector("#fees .container ul").innerHTML = "Not found";
+        document.querySelector("#administration .container ul").innerHTML = "Not found";
+        document.querySelector("#student-life .container ul").innerHTML = "Not found";
+        }else{
+          document.querySelector("#img .container").innerHTML=`
+          <img src=${data.data.img}  alt=""/> `;
+
+          document.querySelector("#About .container p").innerHTML = `
+          <p>${data.data.schoolDescription} visit ${data.data.schoolName} on   <a href="${data.data.url}" style="color: red;">${data.data.shortName} </a></p>
+        `;
+        
+          document.querySelector("#fees .container ul").innerHTML = `
+          <li> Average New Students Total Fees: ${data.data.fees.newStudent} excluding Lab/Studio and Hostel fees</li>   
+            <li> Average Returning Students Total Fees: ${data.data.fees.returningStudent}  excluding Lab/Studio) and Hostel fees</li>
+            <li>Average  Medical/Pharmacy Students Total Fees: ${data.data.fees.medicalStudent}
+          `;
+          //   document.querySelector("#accommodation .container ul").innerHTML = `
+          //   <li>Male Hostels</li>
+          //   <p>${data.accommodation.maleHostels}</p>
+          //   <li>Female Hostels</li>
+          //   <p>${data.accommodation.femaleHostels}</p>
+          // `;
+            document.querySelector("#administration .container ul").innerHTML = `
+            <li>Vice Chancellor: ${data.data.vice_chancellor}</li>
+            <li>Registrar: ${data.data.registra}</li>
+          `;
+          //   document.querySelector("#admission .container").innerHTML = `
+          //   <h2>Admission Information</h2>
+          //   <p>${data.admission.info}</p>
+          //   <ul>
+          //     <li>JAMB Cut-off Mark: ${data.schoolrequirement.jamb}</li>
+          //     <li>JAMB: ${data.admission.jambPercentage}%</li>
+          //     <li>O'Level: ${data.admission.oLevelPercentage}%</li>
+          //     <li>PUTME: ${data.schoolrequirement.postUtme}%</li>
+          //     <li>Application Deadline: ${data.admission.applicationDeadline}</li>
+          //   </ul>
+          
+          //   <h2>Warnings</h2>
+          //   <p>${data.admission.warnings}</p>
+          // `;
+
+          document.querySelector("#student-life .container ul").innerHTML = `
+          <li>Sports and Recreation</li>
+          <li>Student Union Government</li>
+          <li>Clubs and Societies</li>
+        `;   
+        }
+      }
+      });
+    </script>
   </body>
 </html>

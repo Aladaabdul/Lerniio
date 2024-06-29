@@ -21,6 +21,21 @@
     <!-- external cdn - Frameworks -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <!-- Extras -->
+
+    <script>
+           const token = localStorage.getItem('token');
+    if (!token) {
+      // Redirect to the login page if the token does not exist
+      window.location.href = "login.html";
+    } else {
+      // Retrieve the username from localStorage
+      const username = localStorage.getItem('username');
+      if (username) {
+        // Display the username
+        document.getElementById('username').textContent = username;
+      }
+    }
+    </script>
 </head>
 <body>
     <!-- the navigation section of the dashboard -->
@@ -66,7 +81,7 @@
                 </li>
                 <li>
                     <img src="./asset/log-out-svgrepo-com.svg" alt="">
-                    <a href="#">Log out</a>
+                    <a class="logout">Log out</a>
                 </li>
             </ul>
         </div>
@@ -85,7 +100,8 @@
                 <img src="./asset/image-thomas.jpg" alt="">
             </div>
         </div>
-        <h1>Hi, Welcome Peterson <!-- ini between would be a functionality from the username--></h1>
+        <!-- <>Hi, Welcome Peterson <!-- ini between would be a functionality from the username-->
+        <h1>Hi, Welcome <span id="username">Peterson</span></h1>
         <!-- the first section -->
         <section class="welcome-content">
             <!-- learn about schools -->
@@ -215,7 +231,17 @@
      </section>
 
     <script>
+        const logout = document.querySelector(".logout");   
         document.addEventListener('DOMContentLoaded', () => {
+
+     const username = localStorage.getItem('username');
+    if (username) {
+      // Display the username
+      document.getElementById('username').textContent = username;
+    }
+
+    
+
     const apiEndpoint = 'https://young-secretary-shrill-sun-production.pipeops.app/v1/api/school/'; // Replace with your actual API endpoint
 
     // Function to fetch data from the API
@@ -264,8 +290,6 @@
         });
     }
 
-
-
     document.getElementById('federal-universities').addEventListener('click', () => fetchSchools('federal'));
     document.getElementById('state-universities').addEventListener('click', () => fetchSchools('state'));
     document.getElementById('private-universities').addEventListener('click', () => fetchSchools('private'));
@@ -274,6 +298,15 @@
     // Fetch and render the schools on page load
     fetchSchools();
 });
+
+    function logoutUser() {
+      console.log("ogout");
+      setTimeout(() => {
+        window.location.href = "index.html";
+      }, 100);
+      localStorage.clear();
+    }
+    logout.addEventListener("click", logoutUser);
 
     </script>
 </body>

@@ -108,9 +108,12 @@
           );
           const data = await result.json();
           if (data.message) {
+            console.log(data);
+            localStorage.setItem("username", data.name);
+            localStorage.setItem("token", data.token);
             setTimeout(() => {
               window.location.href = "Dashboard.html";
-            }, 300);
+            }, 30);
           }
           if (data.error) {
             console.log(data.error);
