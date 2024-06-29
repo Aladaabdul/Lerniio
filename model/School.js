@@ -79,6 +79,8 @@ const schoolSchema = new Schema({
         default: ''
     },
 
+    img: { type: String },
+
     fees: {
         newStudent: { type: String },
         returningStudent: { type: String },
