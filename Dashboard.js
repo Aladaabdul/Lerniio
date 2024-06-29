@@ -1,10 +1,20 @@
-// the api key from the backend
+// the mobile navigation
+const MenuAll = document.querySelector('.navigation-section');
+const MenuButton = document.querySelector('.mobile-menu');
+const MenuRemove = document.querySelector('.menu-Ham');
 
+MenuButton.addEventListener('click', ()=>{
 
+  MenuAll.classList.add('mobile-nav-show');
 
-// the api fetch data (calling the api to the frontend)
+});
 
+MenuRemove.addEventListener('click', ()=>{
 
+  MenuAll.classList.remove('mobile-nav-show');
+  MenuAll.classList.add('mobile-nav-remove');
+
+});
 // the functionality for the search icon begins from here
 
 //  the functionalities for other events in the Dashboard of lerniio
