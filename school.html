@@ -6,6 +6,8 @@
     <title>Lerniio Dashboard</title>
     <link rel="stylesheet" href="Dashboard.css" />
     <!-- the google fonts -->
+    
+    <!-- BOOTSTRAP-->
     <!-- google fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -304,9 +306,33 @@
               </p> -->
               <!-- the button -->
               <div class="courses-btn">
-                <button class="course-button"><a href="">courses</a></button>
+                <button class="course-button" id="openModal"><a href="">courses</a></button>
+          
               </div>
             </div>
+            <!--- POP UP START-->
+            <div class="popup_container">
+              <!-- Trigger the modal with a button -->
+              <!-- Modal -->
+              <div id="myModal" class="modal">
+                  <div class="modal-dialog">
+                      <!-- Modal content-->
+                      <div class="modal-content">
+                          <div class="modal-header">
+                              <span class="close" id="closeModal">&times;</span>
+                              <h4 class="modal-title">COURSES</h4>
+                          </div>
+                          <div class="modal-body">
+                              <p>Some text in the modal.</p>
+                          </div>
+                          <!-- <div class="modal-footer">
+                              <button type="button" class="btn" id="modalCloseButton">Close</button>
+                          </div> -->
+                      </div>
+                  </div>
+              </div>
+          </div>
+           <!--- POP UP START-->
             <div class="filter-grid filtgrid-2">
               <!-- <div>
                 <img
@@ -591,6 +617,25 @@
         }
       }
       });
+
+     document.getElementById('openModal').addEventListener('click', function() {
+    document.getElementById('myModal').style.display = 'block';
+});
+
+document.getElementById('closeModal').addEventListener('click', function() {
+    document.getElementById('myModal').style.display = 'none';
+});
+
+document.getElementById('modalCloseButton').addEventListener('click', function() {
+    document.getElementById('myModal').style.display = 'none';
+});
+
+// Close the modal if the user clicks anywhere outside of it
+window.onclick = function(event) {
+    if (event.target == document.getElementById('myModal')) {
+        document.getElementById('myModal').style.display = 'none';
+    }
+}
     </script>
   </body>
 </html>
