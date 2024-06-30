@@ -6,6 +6,9 @@
   margin: 0px auto;
   box-sizing: border-box;
 }
+html {
+  scroll-behavior: smooth;
+}
 body {
   display: grid;
   grid-template-columns: 20% 80%;
@@ -494,6 +497,7 @@ section.filtered-lists {
   margin-top: 30px;
 }
 /* the  styles for the school page grid - layout */
+
 .filtering-template {
   display: none;
   color: #2a025a;
@@ -578,6 +582,34 @@ section.filtered-lists {
 #admission li,
 #student-life li {
   line-height: 1.8;
+}
+/* the desktop responsive styles for 1440px, 1200px 1024px */
+@media screen and (max-width: 1400px) {
+  /* the light person style */
+  /* .light-person {
+        position: relative;
+        left: 60%;
+        display: flex;
+        align-items: center;
+    } */
+}
+
+@media screen and (max-width: 1200px) {
+  /* .light-person {
+        position: relative;
+        left: 40%;
+        display: flex;
+        align-items: center;
+    } */
+}
+
+@media screen and (max-width: 1024px) {
+  /* .light-person {
+        position: relative;
+        left: 18%;
+        display: flex;
+        align-items: center;
+    } */
 }
 /* mobile styles are different */
 @media screen and (max-width: 450px) {

@@ -1,185 +1,233 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lerniio Dashboard</title>
-    <link rel="stylesheet" href="Dashboard.css" />
+    <link rel="stylesheet" href="Dashboard.css">
+    <link rel="stylesheet" href="examination.css">
     <!-- the google fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
-      rel="stylesheet"
-    />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
     <!-- the second font -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
-      rel="stylesheet"
-    />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
     <!-- recursive -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Recursive:wght@300..1000&display=swap"
-      rel="stylesheet"
-    />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Recursive:wght@300..1000&display=swap" rel="stylesheet">
     <!-- external cdn - Frameworks -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <!-- Extras -->
-    <script>
-      //   const token = localStorage.getItem("token");
-      //   if (!token) {
-      //     // Redirect to the login page if the token does not exist
-      //     window.location.href = "login.html";
-      //   } else {
-      //     // Retrieve the username from localStorage
-      //     const username = localStorage.getItem("username");
-      //     if (username) {
-      //       // Display the username
-      //       document.getElementById("username").textContent = username;
-      //     }
-      //   }
-
-      document.addEventListener("DOMContentLoaded", (event) => {
-        const token = localStorage.getItem("token");
-        if (!token) {
-          // Redirect to the login page if the token does not exist
-          window.location.href = "login.html";
-        } else {
-          // Retrieve the username from localStorage
-          const username = localStorage.getItem("username");
-          if (username) {
-            // Display the username
-            document.getElementById("username").textContent = username;
-          }
-        }
-      });
-    </script>
-  </head>
-  <body>
+</head>
+<body>
     <!-- the school template -->
-    <!-- the navigation section of the dashboard -->
-    <section class="navigation-section">
-      <div>
-        <header class="nav-header">
-          <div class="Dashboard-container">
-            <nav>
-              <div class="logo">
-                <svg
-                  width="50px"
-                  height="50px"
-                  viewBox="0 -37 256 256"
-                  version="1.1"
-                  xmlns="http://www.w3.org/2000/svg"
-                  xmlns:xlink="http://www.w3.org/1999/xlink"
-                  preserveAspectRatio="xMidYMid"
-                  fill="#2a025a"
-                >
-                  <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-                  <g
-                    id="SVGRepo_tracerCarrier"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  ></g>
-                  <g id="SVGRepo_iconCarrier">
-                    <g>
-                      <path
-                        d="M216.357806,174.771308 C255.135865,205.772152 279.979747,113.201688 218.194093,96.1350211 C166.345992,81.7687764 114.17384,106.396624 61.8936709,163.861603 C61.8936709,163.861603 158.460759,128.540084 216.357806,174.771308 Z"
-                        fill="#7e77b1"
-                      ></path>
-                      <path
-                        d="M62.7578059,163.105485 C99.9156118,124.54346 161.701266,81.5527426 219.274262,97.4312236 C232.668354,101.211814 242.17384,108.98903 248.330802,118.278481 L193.890295,8.42531646 C186.11308,-3.99662447 166.237975,-1.40421941 155.004219,8.10126582 L11.1257384,128.648101 C-1.9443038,139.881857 -2.70042194,159.864979 9.39746835,171.962869 C20.0911392,182.65654 37.049789,183.628692 48.8236287,174.123207 L62.7578059,163.105485 Z"
-                        fill="#fff"
-                      ></path>
-                    </g>
-                  </g>
-                </svg>
+        <!-- the navigation section of the dashboard -->
+        <div class="mobile-header">
+            <div class="mobile-logo">
+                <svg class="mobile-menu" width="30px" height="40px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="#2a025a"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M6 12h12M4 8h16M8 16h8" stroke="#2a025a" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round"></path></g></svg>
                 Lerniio
-              </div>
-              <div class="menu-Ham">
-                <svg
-                  width="32px"
-                  height="18px"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <g fill="#2a025a" fill-rule="evenodd">
-                    <path d="M0 0h32v2H0zM0 8h32v2H0zM0 16h32v2H0z" />
-                  </g>
-                </svg>
-              </div>
-              <ul>
-                <li>
-                  <img src="./asset/home-svgrepo-com.svg" alt="" />
-                  <a href="./Dashboard.html">Home</a>
-                </li>
-                <li>
-                  <img src="./asset/search-globe-svgrepo-com.svg" alt="" />
-                  <a href="#">search</a>
-                </li>
-                <li>
-                  <img src="./asset/school-svgrepo-com.svg" alt="" />
-                  <a href="./school.html">Schools</a>
-                </li>
-                <li>
-                  <img src="./asset/exam-svgrepo-com.svg" alt="" />
-                  <a href="./examination.html">Examination</a>
-                </li>
-              </ul>
-            </nav>
-          </div>
-        </header>
-      </div>
-      <div class="sign-out">
-        <ul>
-          <li>
-            <img src="./asset/help-desk-log-svgrepo-com.svg" alt="" />
-            <a href="#">help</a>
-          </li>
-          <li>
-            <img src="./asset/log-out-svgrepo-com.svg" alt="" />
-            <a class="logout">Log out</a>
-          </li>
-        </ul>
-      </div>
-    </section>
-    <!-- the main section of the Dasboard page -->
-    <section class="main-content">
-      <!-- the search contents -->
-      <div class="content-search">
-        <div class="search-icon">
-          <img src="./asset/search-alt-2-svgrepo-com.svg" alt="" />
-          <input
-            class="search-name"
-            type="search"
-            name="searchcontents"
-            placeholder="search"
-          />
-        </div>
-        <!-- the light theme -->
-        <div class="light-person">
-          <img src="./asset/light-svgrepo-com.svg" alt="" />
-          <img src="./asset/image-thomas.jpg" alt="" />
-        </div>
-      </div>
-      <!-- the layout grid for the examinations page -->
-      <section class="exams-all">
-        <!-- create a grid lay out system -->
-      </section>
-    </section>
-  </body>
-  <script>
-    const logout = document.querySelector(".logout");
+            </div>
+            <div class="mobile-profile">
+                <svg width="24px" height="24px" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="#"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <rect width="48" height="48" fill="white" fill-opacity="0.01"></rect> <path d="M40 28L24 40L8 28" stroke="#2a025a" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M8 10H40" stroke="#2a025a" stroke-width="4" stroke-linecap="round"></path> <path d="M8 18H40" stroke="#2a025a" stroke-width="4" stroke-linecap="round"></path> </g></svg>
+                <img src="./asset/image-thomas.jpg" alt="">
+            </div>
+         </div>
+        <section class="navigation-section">
+            <div>
+                <header class="nav-header">
+                    <div class="Dashboard-container">
+                        <nav>
+                            <div class="menu-Ham">
+                                <svg width="22px" height="22px" viewBox="0 0 512 512" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#ffff" stroke="#ffff"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <title>cancel</title> <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"> <g id="work-case" fill="#fff" transform="translate(91.520000, 91.520000)"> <polygon id="Close" points="328.96 30.2933333 298.666667 1.42108547e-14 164.48 134.4 30.2933333 1.42108547e-14 1.42108547e-14 30.2933333 134.4 164.48 1.42108547e-14 298.666667 30.2933333 328.96 164.48 194.56 298.666667 328.96 328.96 298.666667 194.56 164.48"> </polygon> </g> </g> </g></svg>
+                            </div>
+                            <div class="logo">
+                                <svg width="50px" height="50px" viewBox="0 -37 256 256" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid" fill="#2a025a"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g> <path d="M216.357806,174.771308 C255.135865,205.772152 279.979747,113.201688 218.194093,96.1350211 C166.345992,81.7687764 114.17384,106.396624 61.8936709,163.861603 C61.8936709,163.861603 158.460759,128.540084 216.357806,174.771308 Z" fill="#7e77b1"> </path> <path d="M62.7578059,163.105485 C99.9156118,124.54346 161.701266,81.5527426 219.274262,97.4312236 C232.668354,101.211814 242.17384,108.98903 248.330802,118.278481 L193.890295,8.42531646 C186.11308,-3.99662447 166.237975,-1.40421941 155.004219,8.10126582 L11.1257384,128.648101 C-1.9443038,139.881857 -2.70042194,159.864979 9.39746835,171.962869 C20.0911392,182.65654 37.049789,183.628692 48.8236287,174.123207 L62.7578059,163.105485 Z" fill="#fff"> </path> </g> </g></svg>
+                                Lerniio
+                            </div>
+                            <ul>
+                                <li>
+                                    <img src="./asset/home-svgrepo-com.svg" alt="">
+                                    <a href="./Dashboard.html">Home</a>
+                                </li>
+                                <li class="search-nav">
+                                    <img src="./asset/search-globe-svgrepo-com.svg" alt="">
+                                    <a href="#">search</a>
+                                </li>
+                                <li>
+                                    <img src="./asset/school-svgrepo-com.svg" alt="">
+                                    <a href="./school.html">Schools</a>
+                                </li>
+                                <li>
+                                    <img src="./asset/exam-svgrepo-com.svg" alt="">
+                                    <a href="./examination.html">Examination</a>
+                                </li>    
+                            </ul>
+                        </nav>
+                    </div>
+                </header>
+            </div>
+            <div class="sign-out">
+                <ul>
+                    <li>
+                        <img src="./asset/help-desk-log-svgrepo-com.svg" alt="">
+                        <a href="#">help</a>
+                    </li>
+                    <li>
+                        <img src="./asset/log-out-svgrepo-com.svg" alt="">
+                        <a href="#">Log out</a>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        <!-- the main section of the Dasboard page -->
+        <section class="main-content">
+            <!-- the search contents -->
+            <div class="content-search">
+                <div class="search-icon">
+                    <img src="./asset/search-alt-2-svgrepo-com.svg" alt="">
+                    <input class="search-name"  type="search" name="searchcontents" placeholder="search">
+                </div>
+                <!-- the light theme -->
+                <div class="light-person">
+                    <img src="./asset/light-svgrepo-com.svg" alt="">
+                    <img src="./asset/image-thomas.jpg" alt="">
+                </div>
+            </div>
+            <!-- the layout grid for the examinations page -->
+             <section class="exams-all">
+                <div class="examination-header">
+                    <div>
+                        <h1>examinations</h1>
+                    </div>
+                    <div>
+                        <button class="exam-btn"><a href="./examination.html">Back</a></button>
+                    </div>
+                </div>
+                <!-- create a grid lay out system -->
+                 <main class="exam-grid">
+                    <!-- the article grid -->
+                    <article class="exam-grid-all">
+                        <!-- jamb logo aspect -->
+                        <div class="exam-all jamb-all">
+                            <div class="examination-images">
+                                <div class="exam-back">
+                                    <svg width="24px" height="24px" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" fill="#2a025a" transform="matrix(-1, 0, 0, 1, 0, 0)" stroke="#2a025a"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path fill="#2a025a" d="M224 480h640a32 32 0 1 1 0 64H224a32 32 0 0 1 0-64z"></path><path fill="#2a025a" d="m237.248 512 265.408 265.344a32 32 0 0 1-45.312 45.312l-288-288a32 32 0 0 1 0-45.312l288-288a32 32 0 1 1 45.312 45.312L237.248 512z"></path></g></svg>
+                                </div>
+                                <img src="https://i.pinimg.com/564x/ec/ce/9f/ecce9f34b9cf3bc867d301e43c326db3.jpg" alt="">
+                            </div>
+                            <div class="examination-text">
+                                <h3>Jamb</h3>
+                                <p>
+                                    The joint admission matriculation examination board is a tetiary examination body that assess
+                                    students for university and also examine how credible they are for tetiary education.
+                                </p>
+                            </div>
+                        </div>
+                        <!-- the waech logo aspect -->
+                        <div class="exam-all waec-all">
+                            <div class="examination-images">
+                                <div class="exam-back">
+                                    <svg width="24px" height="24px" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" fill="#2a025a" transform="matrix(-1, 0, 0, 1, 0, 0)" stroke="#2a025a"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path fill="#2a025a" d="M224 480h640a32 32 0 1 1 0 64H224a32 32 0 0 1 0-64z"></path><path fill="#2a025a" d="m237.248 512 265.408 265.344a32 32 0 0 1-45.312 45.312l-288-288a32 32 0 0 1 0-45.312l288-288a32 32 0 1 1 45.312 45.312L237.248 512z"></path></g></svg>
+                                </div>
+                                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS6jazBwtDo3vXWJzC8rj-i2hiY7I8isDo1Vg&s" alt="">
+                            </div>
+                            <div class="examination-text">
+                                <h3>waec</h3>
+                                <p>
+                                    West african examination council is the final stage for every secondary school students. It is a must take  exam 
+                                    for every west african student. This examination body is a major international examination.
+                                </p>
+                            </div>
+                        </div>
+                        <!-- the neco logo aspect -->
+                        <div class="exam-all neco-all">
+                            <div class="examination-images">
+                                <div class="exam-back">
+                                    <svg width="24px" height="24px" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" fill="#2a025a" transform="matrix(-1, 0, 0, 1, 0, 0)" stroke="#2a025a"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path fill="#2a025a" d="M224 480h640a32 32 0 1 1 0 64H224a32 32 0 0 1 0-64z"></path><path fill="#2a025a" d="m237.248 512 265.408 265.344a32 32 0 0 1-45.312 45.312l-288-288a32 32 0 0 1 0-45.312l288-288a32 32 0 1 1 45.312 45.312L237.248 512z"></path></g></svg>
+                                </div>
+                                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQwYJYSJA_SSFx9JwQTcnOBCE6ejG65TY0How&s" alt="">
+                            </div>
+                            <div class="examination-text">
+                                <h3>neco</h3>
+                                <p>
+                                    National examination council is an examination body in Nigeria that 
+                                    conducts senior secondary school certificate examinations (SSCE). It's also 
+                                    similar to waec examination.
+                                </p>
+                            </div>
+                        </div>
+                        <!-- otheer examination bodies -->
+                        <div class="exam-fourth">
+                            <div>
+                                <img src="https://img.freepik.com/free-vector/hand-drawn-essay-illustration_23-2150320909.jpg?t=st=1719440137~exp=1719443737~hmac=4670cc93342907fba543b06d38324525a3290dba34654074350ab9c1bde6f76d&w=740" alt="">
+                            </div>
+                            <div class="fourth-examlists">
+                                <h2>Other Examination Bodies</h2>
+                                <ol>
+                                    <li class="listss">National Board of educational Measurements</li>
+                                    <li class="listss">General certificates examinations</li>
+                                    <li class="listss">Post universities matriculation examination</li>
+                                </ol>
+                            </div>
+                        </div>
+                        <!-- the ielts logo aspect -->
+                        <div class="exam-all ielts-all">
+                            <div class="examination-images">
+                                <div class="exam-back">
+                                    <svg width="24px" height="24px" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" fill="#2a025a" transform="matrix(-1, 0, 0, 1, 0, 0)" stroke="#2a025a"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path fill="#2a025a" d="M224 480h640a32 32 0 1 1 0 64H224a32 32 0 0 1 0-64z"></path><path fill="#2a025a" d="m237.248 512 265.408 265.344a32 32 0 0 1-45.312 45.312l-288-288a32 32 0 0 1 0-45.312l288-288a32 32 0 1 1 45.312 45.312L237.248 512z"></path></g></svg>
+                                </div>
+                                <img src="https://images-platform.99static.com/02DKEVc8EEybUrFWoqIEHXPgVjU=/500x500/top/smart/99designs-contests-attachments/58/58698/attachment_58698966" alt="">
+                            </div>
+                            <div class="examination-text">
+                                <h3>IELTS</h3>
+                                <p>
+                                    International English Language Testing System is a standardized  english proficiency test 
+                                    that measures the language ability of non-native english speakers.
+                                </p>
+                            </div>
+                        </div>
+                        <!-- the jubep logo aspect -->
+                        <div class="exam-all jubep-all">
+                            <div class="examination-images">
+                                <div class="exam-back">
+                                    <svg width="24px" height="24px" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" fill="#2a025a" transform="matrix(-1, 0, 0, 1, 0, 0)" stroke="#2a025a"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path fill="#2a025a" d="M224 480h640a32 32 0 1 1 0 64H224a32 32 0 0 1 0-64z"></path><path fill="#2a025a" d="m237.248 512 265.408 265.344a32 32 0 0 1-45.312 45.312l-288-288a32 32 0 0 1 0-45.312l288-288a32 32 0 1 1 45.312 45.312L237.248 512z"></path></g></svg>
+                                </div>
+                                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR4bKWavBRdR2PEgbjL2kN3faBarnyRZbtzsw&s" alt="">
+                            </div>
+                            <div class="examination-text">
+                                <h3>Jubep</h3>
+                                <p>
+                                    Joint  universities  preliminary examinations board is a nigerian examination for students seeking admission into
+                                    nigerian universities. 
+                                </p>
+                            </div>
+                        </div>
+                        <!-- the nabteb logo aspect -->
+                        <div class="exam-all nabteb-all">
+                            <div class="examination-images">
+                                <div class="exam-back">
+                                    <svg width="24px" height="24px" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" fill="#2a025a" transform="matrix(-1, 0, 0, 1, 0, 0)" stroke="#2a025a"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path fill="#2a025a" d="M224 480h640a32 32 0 1 1 0 64H224a32 32 0 0 1 0-64z"></path><path fill="#2a025a" d="m237.248 512 265.408 265.344a32 32 0 0 1-45.312 45.312l-288-288a32 32 0 0 1 0-45.312l288-288a32 32 0 1 1 45.312 45.312L237.248 512z"></path></g></svg>
+                                </div>
+                                <img class="sixth-img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRsvRLHXp55djDuLMQdzOqade8Hzp31PIpbm842-iNSYBYjjR2IXF4GnOc8cfgmY5pZgSU&usqp=CAU" alt="">
+                            </div>
+                            <div class="examination-text">
+                                <h3>Nabteb</h3>
+                                <p>
+                                    Nabteb - national business and technical examinations  board conducts senior secondary school certificate  examination ssce and general certificate examinations.
+                                </p>
+                            </div>
+                        </div>
+                    </article>
+                    <section class="exam-displays">
+                        <!-- the array contents of each examination bodies goes in here -->
+                    </section>
+                 </main>
+             </section>
+        </section>
 
-    function logoutUser() {
-      console.log("ogout");
-      setTimeout(() => {
-        window.location.href = "index.html";
-      }, 100);
-      localStorage.clear();
-    }
-    logout.addEventListener("click", logoutUser);
-  </script>
+    <script src="./examination.js"></script>
+</body>
 </html>
