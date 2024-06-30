@@ -104,10 +104,10 @@ async function forgotPassword(req, res) {
             existingUser.resetToken = token;
             existingUser.resetTokenExpires = Date.now() + 3600000;
             const data = await existingUser.save();
-            if (data) {
-                res.status(200).json({ message: "Password reset email sent successfully" })
+            // if (data) {
+            //     res.status(200).json({ message: "Password reset email sent successfully" })
 
-            }
+            // }
 
             const transporter = nodemailer.createTransport({
                 service: 'gmail',
