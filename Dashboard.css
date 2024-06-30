@@ -613,7 +613,7 @@ section.filtered-lists {
 }
 /* mobile styles are different */
 @media screen and (max-width: 450px) {
-  body {
+/*   body {
     display: grid;
     grid-template-columns: repeat(1, 1fr);
     max-height: fit-content;
@@ -801,5 +801,5 @@ section.filtered-lists {
   }
   .filtered-2 {
     display: none;
-  }
+  } */
 }
