@@ -613,7 +613,7 @@ section.filtered-lists {
 }
 /* mobile styles are different */
 @media screen and (max-width: 450px) {
-   body {
+  body {
     display: grid;
     grid-template-columns: repeat(1, 1fr);
     max-height: fit-content;
@@ -730,7 +730,7 @@ section.filtered-lists {
     align-items: center;
     margin: 0px;
     border-bottom: 1px solid #2a025a7a;
-    
+
     border-radius: 0px;
     background-color: #ffff;
     padding: 24px 5px;
@@ -801,5 +801,5 @@ section.filtered-lists {
   }
   .filtered-2 {
     display: none;
-  } */
+  }
 }
