@@ -85,7 +85,7 @@ async function Login(req, res) {
     }
 
     const token = jwt.sign({ userId: existingUser.id, email: existingUser.email }, process.env.JWT_TOKEN, { expiresIn: '1h' });
-    res.cookie('token', token, { httpOnly: true, secure: true, sameSite: 'none' });
+    res.cookie('token', token, { httpOnly: true, secure: true, sameSite: 'lax' });
 
     return res.status(200).json({ name: existingUser.username, token, message: "Login Successfully" })
 }
@@ -94,95 +94,82 @@ async function Login(req, res) {
 async function forgotPassword(req, res) {
     const { email } = req.body;
 
-    let existingUser;
-
     try {
-        existingUser = await userModel.findOne({ email })
+        const existingUser = await userModel.findOne({ email })
+        if (!existingUser) {
+            return res.status(404).json({ error: "No user found by this email!" })
+        }
+        if (existingUser) {
+            const token = uuid.v4();
+            existingUser.resetToken = token;
+            existingUser.resetTokenExpires = Date.now() + 3600000;
+            const data = await existingUser.save();
+            if (data) {
+                res.status(200).json({ message: "Password reset email sent successfully" })
+
+            }
+
+            //     const transporter = nodemailer.createTransport({
+            //         service: 'gmail',
+            //         auth: {
+            //             user: process.env.EMAIL,
+            //             pass: process.env.PASSWORD
+            //         }
+            //     });
+
+            //     const mailOptions = {
+            //         from: process.env.EMAIL,
+            //         to: existingUser.email,
+            //         subject: 'Password Reset Request',
+            //         text: `Click on the following link to reset your password: http://localhost:8000/v1/api/user/resetpassword?token=${token}`
+            //     };
+
+            //     transporter.sendMail(mailOptions, (error, info) => {
+            //         if (error) {
+            //             console.log(error);
+            //             return res.status(500).json({ message: "Failed to send password reset email" });
+            //         }
+            //         return res.status(200).json({ message: 'Password reset email sent successfully' });
+            //     });
+        }
+
     } catch (error) {
         return console.log(error)
     }
 
-    if (!existingUser) {
-        return res.status(404).json({ error: "No user found by this email!" })
-    }
-
-    const token = uuid.v4();
-
-    existingUser.resetToken = token;
-    existingUser.resetTokenExpires = Date.now() + 3600000;
-
-    try {
-        await existingUser.save();
-    } catch (error) {
-        return console.log(error);
-    }
-
-    const transporter = nodemailer.createTransport({
-        service: 'gmail',
-        auth: {
-            user: process.env.EMAIL,
-            pass: process.env.PASSWORD
-        }
-    });
-
-    const mailOptions = {
-        from: process.env.EMAIL,
-        to: existingUser.email,
-        subject: 'Password Reset Request',
-        text: `Click on the following link to reset your password: http://localhost:8000/v1/api/user/resetpassword?token=${token}`
-    };
-
-    transporter.sendMail(mailOptions, (error, info) => {
-        if (error) {
-            console.log(error);
-            return res.status(500).json({ message: "Failed to send password reset email" });
-        }
-        return res.status(200).json({ message: 'Password reset email sent successfully' });
-    });
 
 }
 
 
 async function resetPassword(req, res, next) {
     const { token, newPassword } = req.body;
-
-    let existingUser;
+    console.log(req.body);
+    if (!newPassword) {
+        return res.status(400).json({ error: " password is required" });
+    }
     try {
-        existingUser = await userModel.findOne({
+        const existingUser = await userModel.findOne({
             resetToken: token,
             resetTokenExpires: { $gt: Date.now() }
         });
+
+        if (!existingUser) {
+            return res.status(400).json({ error: "Invalid or expired token" });
+        }
+
+        const hashedPassword = await bcrypt.hash(newPassword, 10);
+        existingUser.password = hashedPassword;
+        existingUser.resetToken = undefined;
+        existingUser.resetTokenExpires = undefined;
+
+        const savedUser = await existingUser.save();
+        if (savedUser) {
+            return res.status(200).json({ message: 'Password reset successful' });
+        }
     } catch (error) {
         console.log(error);
-        return res.status(500).json({ message: "Something went wrong, please try again" });
+        return res.status(500).json({ error: "Something went wrong, please try again" });
     }
-
-    if (!existingUser) {
-        return res.status(400).json({ message: "Invalid or expired token" });
-    }
-
-    // hash the new password
-    let hashedPassword;
-    try {
-        hashedPassword = await bcrypt.hash(newPassword, 12);
-    } catch (error) {
-        console.log(error);
-        return res.status(500).json({ message: "Failed to hash the password" });
-    }
-
-
-    existingUser.password = hashedPassword;
-    existingUser.resetToken = undefined;
-    existingUser.resetTokenExpires = undefined;
-
-    try {
-        await existingUser.save();
-    } catch (error) {
-        console.log(error);
-        return res.status(500).json({ message: "Failed to reset the password" });
-    }
-
-    return res.status(200).json({ message: "Password reset successfully" });
 }
 
 
