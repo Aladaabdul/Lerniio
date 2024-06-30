@@ -109,28 +109,28 @@ async function forgotPassword(req, res) {
 
             }
 
-            //     const transporter = nodemailer.createTransport({
-            //         service: 'gmail',
-            //         auth: {
-            //             user: process.env.EMAIL,
-            //             pass: process.env.PASSWORD
-            //         }
-            //     });
+            const transporter = nodemailer.createTransport({
+                service: 'gmail',
+                auth: {
+                    user: process.env.EMAIL,
+                    pass: process.env.PASSWORD
+                }
+            });
 
-            //     const mailOptions = {
-            //         from: process.env.EMAIL,
-            //         to: existingUser.email,
-            //         subject: 'Password Reset Request',
-            //         text: `Click on the following link to reset your password: http://localhost:8000/v1/api/user/resetpassword?token=${token}`
-            //     };
+            const mailOptions = {
+                from: process.env.EMAIL,
+                to: existingUser.email,
+                subject: 'Password Reset Request',
+                text: `Click on the following link to reset your password: http://localhost:8000/v1/api/user/resetpassword?token=${token}`
+            };
 
-            //     transporter.sendMail(mailOptions, (error, info) => {
-            //         if (error) {
-            //             console.log(error);
-            //             return res.status(500).json({ message: "Failed to send password reset email" });
-            //         }
-            //         return res.status(200).json({ message: 'Password reset email sent successfully' });
-            //     });
+            transporter.sendMail(mailOptions, (error, info) => {
+                if (error) {
+                    console.log(error);
+                    return res.status(500).json({ message: "Failed to send password reset email" });
+                }
+                return res.status(200).json({ message: 'Password reset email sent successfully' });
+            });
         }
 
     } catch (error) {
