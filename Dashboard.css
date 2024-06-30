@@ -45,7 +45,8 @@ body {
   margin: 0px;
   margin-right: 10px;
 }
-.menu-Ham {
+.menu-Ham,
+.mobile-header {
   display: none;
 }
 nav ul {
@@ -110,6 +111,10 @@ ul li img {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  width: 100vw;
+  margin: 0px;
+}
+.content-search div {
   margin: 0px;
 }
 .search-icon {
@@ -138,8 +143,8 @@ ul li img {
   margin-right: 2px;
 }
 .light-person {
-  position: relative;
-  left: 85%;
+  /* position: relative;
+  left: 85%; */
   display: flex;
   align-items: center;
 }
@@ -183,11 +188,12 @@ ul li img {
 }
 .contents-1,
 .contents-2,
-.contents-3 {
+.contents-3,
+.contents-4 {
   background: linear-gradient(#87ceeb, #65b0f0);
   box-shadow: 0px 4px 4px -1px #a3a3a35b;
 }
-.contents-4 {
+/* .contents-4 {
   display: grid;
   grid-template-columns: repeat(1, 1fr);
   background-color: #fff;
@@ -197,8 +203,8 @@ ul li img {
   margin: 0px;
 }
 .content-4 img {
-  width: 100%;
-}
+width: 100%;
+} */
 .date-event {
   display: flex;
   flex-direction: row-reverse;
@@ -358,7 +364,7 @@ section.filtered-lists {
 }
 .filtering p:nth-child(1) {
   /* color: #fff;
-    background-color: #2a025a; */
+  background-color: #2a025a; */
   padding: 10px 0px;
   border-radius: 7px;
 }
@@ -396,27 +402,27 @@ section.filtered-lists {
   margin-top: 0px;
 }
 /* .display-uni .filtering {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    text-align: center;
-    background-color: #f5f5f5;
-    color: #570cb3;
-    margin: 0px 0px;
-    margin-top: 0px;
-    border-bottom: 1px solid #a3a3a35b;
-    border-radius: 1px;
-    box-shadow: none;
-    font-weight: 100;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  text-align: center;
+  background-color: #f5f5f5;
+  color: #570cb3;
+  margin: 0px 0px;
+  margin-top: 0px;
+  border-bottom: 1px solid #a3a3a35b;
+  border-radius: 1px;
+  box-shadow: none;
+  font-weight: 100;
 }
 .display-uni .filtering p {
-    font-weight: 400;
+  font-weight: 400;
 }
 .display-uni .filtering .school-name {
-    text-align: left;
-    text-transform: uppercase;
-    font-size: 14px;
-    color: #570cb3;
-    font-weight: 900;
+  text-align: left;
+  text-transform: uppercase;
+  font-size: 14px;
+  color: #570cb3;
+  font-weight: 900;
 } */
 .filtering-btn {
   position: absolute;
@@ -489,12 +495,6 @@ section.filtered-lists {
 /* the responsive styles  begins from here */
 .mobile-Dashboard {
   display: none;
-}
-/* the examination styles */
-.exam-listings {
-  display: flex;
-  margin: 0px;
-  margin-top: 30px;
 }
 /* the  styles for the school page grid - layout */
 
@@ -587,58 +587,219 @@ section.filtered-lists {
 @media screen and (max-width: 1400px) {
   /* the light person style */
   /* .light-person {
-        position: relative;
-        left: 60%;
-        display: flex;
-        align-items: center;
-    } */
+      position: relative;
+      left: 60%;
+      display: flex;
+      align-items: center;
+  } */
 }
 
 @media screen and (max-width: 1200px) {
   /* .light-person {
-        position: relative;
-        left: 40%;
-        display: flex;
-        align-items: center;
-    } */
+      position: relative;
+      left: 40%;
+      display: flex;
+      align-items: center;
+  } */
 }
 
 @media screen and (max-width: 1024px) {
   /* .light-person {
-        position: relative;
-        left: 18%;
-        display: flex;
-        align-items: center;
-    } */
+      position: relative;
+      left: 18%;
+      display: flex;
+      align-items: center;
+  } */
 }
 /* mobile styles are different */
 @media screen and (max-width: 450px) {
   body {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    max-height: fit-content;
+    overflow: auto;
+    width: 100%;
+    color: #2a025a;
+    font-family: "Lato", sans-serif;
+  }
+  .mobile-header {
+    max-width: 425px;
+    margin: 0px auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 10px;
+    width: 100%;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px,
+      rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+  }
+  .mobile-header div {
+    margin: 0px 0px;
+  }
+  .mobile-logo {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-family: "Recursive", sans-serif;
+    font-size: 26px;
     color: #2a025a;
   }
-  /* the mobile navigation styling begins from here */
-  .mobile-nav {
+  .mobile-menu {
+    cursor: pointer;
+    margin-right: 20px;
+  }
+  /* the first section styling and the navigations page mobile view */
+  .logo {
+    color: #fff;
+  }
+  .menu-Ham {
     display: block;
+    text-align: right;
+    position: relative;
+    left: 80px;
   }
-  .mobile-list {
-    width: 100%;
-  }
-  .mobile-list ul {
-    border: 0px;
-    margin: 0px;
-    padding: 0px;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
+  .mobile-profile {
+    display: flex;
+    flex-direction: row;
     align-items: center;
   }
-  a {
-    color: #000;
+  .mobile-profile img:nth-child(2) {
+    width: 50px;
+    border: 0px;
+    border-radius: 50px;
+    margin-left: 16px;
   }
-  .navigation-section,
+  .navigation-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    background-color: #2a025a;
+    text-align: left;
+    height: 100%;
+    width: 80vw;
+    padding: 30px 0px 30px 30px;
+    margin: 0px;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index: 10;
+    transform: translateX(-100%);
+  }
+  .mobile-nav-show {
+    transform: translateX(0%);
+    transition: 0.5s ease-in;
+  }
+  .mobile-nav-remove {
+    transition: 0.5s ease-out;
+  }
+  .sign-out {
+    display: flex;
+    justify-self: flex-end;
+    align-items: flex-start;
+    border-top: 1px solid #a3a3a35b;
+    padding: 10px 0px 0px 0px;
+    width: 60vw;
+  }
+  .sign-out ul {
+    margin: 0px;
+  }
+
+  /* the mobile navigation styling begins from here */
   .main-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: center;
+    width: 100vw;
+    height: auto;
+    scroll-behavior: smooth;
+    padding: 40px 20px;
+    color: #2a025a;
+  }
+  .content-search {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0px;
+  }
+  .search-icon {
+    display: flex;
+    align-items: center;
+    margin: 0px;
+    border-bottom: 1px solid #2a025a7a;
+    /* box-shadow: 0px 4px 4px -3px #a3a3a35b; */
+    border-radius: 0px;
+    background-color: #ffff;
+    padding: 24px 5px;
+    padding-left: 0px;
+    padding-bottom: 12px;
+  }
+  .search-icon input {
+    outline: none;
+    border: none;
+    width: 100vw;
+    font-size: 15px;
+    font-weight: 500;
+    font-family: "Lato", sans-serif;
+    color: #2a025a;
+    background-color: transparent;
+  }
+  .light-person {
     display: none;
   }
-  .mobile-Dashboard {
-    display: block;
+  .main-content h1 {
+    font-family: "Lato" sans-serif;
+    color: #2a025a;
+    text-transform: capitalize;
+    margin: 20px 0px;
+    margin-top: 20px;
+  }
+  /* the first welcome section content */
+  .welcome-content {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 20px;
+    width: 100vw;
+    margin: 20px 0px;
+  }
+  .contents-items {
+    margin: 0px;
+    padding: 20px 20px;
+    padding-left: 14px;
+    height: 100%;
+    border-radius: 10px;
+  }
+  /* the second - lists */
+  section.filtered-lists {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    width: 100vw;
+    height: 100%;
+    gap: 20px;
+    text-align: left;
+  }
+  .uni-1 {
+    margin: 20px 0px;
+    padding: 14px 0px;
+    padding-top: 16px;
+    padding-left: 20px;
+    font-weight: 700;
+    border-bottom: 1px solid #2a035c17;
+  }
+  .filtered h1 {
+    margin: 0px;
+    color: #2a025a;
+    font-size: 28px;
+    font-weight: 700;
+    text-align: center;
+    padding: 10px 5px;
+    padding-bottom: 10px;
+    margin-bottom: 5px;
+  }
+  .filtered-2 {
+    display: none;
   }
 }
