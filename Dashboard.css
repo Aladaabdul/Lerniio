@@ -647,7 +647,7 @@ section.filtered-lists {
     flex-direction: row;
     align-items: center;
     font-family: "Recursive", sans-serif;
-    font-size: 26px;
+    font-size: 20px;
     color: #2a025a;
   }
   .mobile-menu {
@@ -662,12 +662,12 @@ section.filtered-lists {
     display: block;
     text-align: right;
     position: relative;
-    left: 80px;
   }
   .mobile-profile {
     display: flex;
     flex-direction: row;
     align-items: center;
+    font-size: 24px;
   }
   .mobile-profile img:nth-child(2) {
     width: 50px;
@@ -734,6 +734,7 @@ section.filtered-lists {
     display: flex;
     align-items: center;
     margin: 0px;
+    border: 0px;
     border-bottom: 1px solid #2a025a7a;
 
     border-radius: 0px;
@@ -758,6 +759,8 @@ section.filtered-lists {
   .main-content h1 {
     font-family: "Lato" sans-serif;
     color: #2a025a;
+    font-size: 20px;
+    text-align: left;
     text-transform: capitalize;
     margin: 20px 0px;
     margin-top: 20px;
