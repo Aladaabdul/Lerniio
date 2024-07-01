@@ -97,6 +97,12 @@ form button {
     display: block;
     margin-top: 40px;
 }
+.forgot-pass a{
+    color: #ccc;
+}
+.forgot-pass a::after {
+    color: #ccc;
+}
 /* mini laptop responsive design */
 @media screen  and (max-width:  1200px){
 
