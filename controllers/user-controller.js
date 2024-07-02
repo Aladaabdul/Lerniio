@@ -113,15 +113,36 @@ async function forgotPassword(req, res) {
                 service: 'gmail',
                 auth: {
                     user: process.env.EMAIL,
-                    pass: process.env.PASSWORD
+                    pass:process.env.PASSWORD
+                    
+                   
                 }
             });
 
             const mailOptions = {
                 from: process.env.EMAIL,
                 to: existingUser.email,
-                subject: 'Password Reset Request',
-                text: `Click on the following link to reset your password: http://localhost:8000/v1/api/user/resetpassword?token=${token}`
+                subject: `${existingUser.username}, Reset Your Password for Your Lerniio  Account`,
+                //text: `Click on the following link to reset your password: http://localhost:8000/v1/api/user/resetpassword?token=${token}`
+                html: `
+                <div style="font-family: Arial, sans-serif; line-height: 1.6; color: #333;">
+                  <h2>Password Reset </h2>
+                  <p>Hello, ${existingUser.username}</p>
+                  <p>You have requested to reset your password. Click on the button below to proceed:</p>
+                  <a href="https://cute-mint-shrill-sun-production.pipeops.app/resetpassword.html?token=${token}" 
+                     style="display: inline-block; padding: 10px 20px; font-size: 16px; color: #fff; background-color: #007BFF; text-decoration: none; border-radius: 5px;">
+                     Reset Password
+                  </a>
+                  <p>If you did not request a password reset, please ignore this email.</p>
+                  <p>Thank you,<br>Lernioo</p>
+                 <hr style="border: 0; border-top: 1px solid #eee; margin: 40px 0;">
+                <div style="text-align: center;">
+                    <p style="margin: 0;">Need help? <a href="YOUR_CONTACT_US_URL" style="color: #007BFF; text-decoration: none;">Contact Us</a></p>
+                    <p style="margin: 5px 0;">26, ikeja road , ikeja, lagos, Po-box:344455</p>
+                    <p style="margin: 0;">&copy; ${new Date().getFullYear()} Lerniio. All rights reserved.</p>
+                </div>
+                </div>
+              `
             };
 
             transporter.sendMail(mailOptions, (error, info) => {
