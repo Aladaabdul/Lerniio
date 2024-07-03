@@ -574,6 +574,28 @@
             <li>Vice Chancellor: ${data.data.vice_chancellor}</li>
             <li>Registrar: ${data.data.registra}</li>
           `;
+          document.querySelector("#admission .container").innerHTML = `
+        <p>
+                    Admission to full-time undergraduate programs at the
+                   ${data.data.schoolName}is exclusively through the Unified
+                    Tertiary Matriculation Examination (UTME) and Direct Entry
+                    (DE). Applicants must have at least five (5) credits in
+                    O'Level or equivalent qualifications as specified by the
+                    relevant department. A minimum UTME score of ${data.schoolrequirement.jamb}s is
+                    required, and candidates' details must be submitted to the
+                    University by the Joint Admissions and Matriculation Board
+                    (JAMB). Additionally, candidates must participate in the
+                    University POST-UTME Examination and achieve the necessary
+                    minimum score. The University Admissions Office is
+                    responsible for processing full-time undergraduate
+                    admissions only. Other programs, including Foundation,
+                    Diploma, Distance Learning Institute (DLI), Postgraduate,
+                    and evening courses, are managed by other university
+                    departments. Candidates must be at least sixteen (16) years
+                    old by October 31st of the admission year.
+        </p>
+          `;
+
           //   document.querySelector("#admission .container").innerHTML = `
           //   <h2>Admission Information</h2>
           //   <p>${data.admission.info}</p>
