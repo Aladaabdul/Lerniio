@@ -534,15 +534,16 @@
 
 
        async function fetchSchoolData(query) {
-        
         let apiUrl;
         
                 if (query.length > 10) {
-                     apiUrl = `http://127.0.0.1:8000/v1/api/school/schoolfullname/${query}`;
-                    // console.log('http://127.0.0.1:8000/v1/api/school/schoolfullname query')
+                    // apiUrl = `http://127.0.0.1:8000/v1/api/school/schoolfullname/${query}`;
+                      apiUrl=`https://young-secretary-shrill-sun-production.pipeops.app/v1/api/school/schoolfullname/${query}`
+                   
                 } else {
-                    apiUrl = `http://127.0.0.1:8000/v1/api/school/schoolname/${query}`;
-                    console.log(query)
+                    //apiUrl = `http://127.0.0.1:8000/v1/api/school/schoolname/${query}`;
+                    apiUrl=`https://young-secretary-shrill-sun-production.pipeops.app/v1/api/school/schoolname/${query}`
+                    
                 }
               
            await fetch(
