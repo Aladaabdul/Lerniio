@@ -525,15 +525,30 @@
 
         form.addEventListener("submit", async function (event) {
           event.preventDefault();
-          const query = searchInput.value;
+          const query = searchInput.value.trim();
           const data = await fetchSchoolData(query);
           updateHTML(data);
         });
 
+     
+
+
        async function fetchSchoolData(query) {
+        
+        let apiUrl;
+        
+                if (query.length > 10) {
+                     apiUrl = `http://127.0.0.1:8000/v1/api/school/schoolfullname/${query}`;
+                    // console.log('http://127.0.0.1:8000/v1/api/school/schoolfullname query')
+                } else {
+                    apiUrl = `http://127.0.0.1:8000/v1/api/school/schoolname/${query}`;
+                    console.log(query)
+                }
+              
            await fetch(
+            apiUrl
            // `https://young-secretary-shrill-sun-production.pipeops.app/v1/api/school/schoolname/${query}`
-             `http://127.0.0.1:8000/v1/api/school/schoolname/${query}`,
+           //  `http://127.0.0.1:8000/v1/api/school/schoolname/${query}`,
           )
             .then((response) => response.json())
             .then((data) => {
