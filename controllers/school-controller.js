@@ -153,3 +153,34 @@ exports.getbyschooltype = async (req, res, next) => {
     }
 
 }
+
+
+exports.getbyschoolfullname = async (req, res, next) => {
+    const name = req.params.name.toLowerCase();
+    console.log(name);
+
+    try {
+
+        const getschool = await School.findOne({ schoolName: { $regex: new RegExp(`^${name}$`, 'i') } });
+
+        if (!getschool) {
+            return res.status(200).json({
+                message: 'school data not  found',
+
+            })
+        }
+        return res.status(200).json({
+            message: ' single school data found',
+            data: getschool
+        })
+
+    }
+    catch (error) {
+        return res.status(400).json({
+            message: " error occured",
+            error: error.message
+        })
+
+    }
+
+}
