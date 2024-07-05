@@ -35,6 +35,10 @@
 .help-grid div svg {
     margin: 16px 0px;
 }
+.help-grid div svg:hover {
+    transform: scaleY(1.05px);
+    transition: .5s ease-in-out;
+}
 
 @media screen and (max-width: 450px) {
     .help-main {
