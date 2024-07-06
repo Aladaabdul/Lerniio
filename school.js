@@ -1,3 +1,21 @@
+// the mobile navigation
+const MenuAll = document.querySelector('.navigation-section');
+const MenuButton = document.querySelector('.mobile-menu');
+const MenuRemove = document.querySelector('.menu-Ham');
+
+MenuButton.addEventListener('click', ()=>{
+
+  MenuAll.classList.add('mobile-nav-show');
+
+});
+
+MenuRemove.addEventListener('click', ()=>{
+
+  MenuAll.classList.remove('mobile-nav-show');
+  MenuAll.classList.add('mobile-nav-remove');
+
+});
+
 // the school functionality
 const searchNavigation = document.querySelector('.search-nav');
 const searchName = document.querySelector('.searches-btn');
