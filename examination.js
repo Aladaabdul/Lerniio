@@ -526,3 +526,28 @@ svgArray[5].addEventListener("click", () => {
   headerTemplate.textContent =
     "The National Business and Technical Examination Board";
 });
+
+const syllabusBtn = document.querySelector('.subjects-listss');
+const syllabusTemp = document.querySelector('.syllabus');
+const gridTemp = document.querySelector('.exam-grid');
+
+syllabusBtn.addEventListener('click', ()=>{
+
+  syllabusTemp.style.display = 'block';
+  gridTemp.style.display = 'none';
+
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
