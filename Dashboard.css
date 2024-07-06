@@ -597,6 +597,9 @@ section.filtered-lists {
 #fees li, #administration li, #admission li, #student-life li {
     line-height: 1.8;
 }
+#About p {
+    margin: 0px;
+}
 
 /* the schools page courses styles */
 .courses-template {
