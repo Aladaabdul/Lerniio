@@ -142,7 +142,7 @@ const ExamsArray = [
                                 <li>The Gambia</li>
                             </ol>
 
-                            <h3>Subjects offered by JAMB</h3>
+                            <h3>Subjects offered by WAEC</h3>
                             <ol class="subjects-lists">
                                <li>Use of English (Compulsory)</li>
                                <li>Mathematics</li>
@@ -200,7 +200,7 @@ const ExamsArray = [
                             </p>                            
                         </div>  
                         <div class="reg-lists">
-                            <h3>Subjects offered by JAMB</h3>
+                            <h3>Subjects offered by NECO</h3>
                             <ol class="subjects-lists">
                                <li>Use of English (Compulsory)</li>
                                <li>Mathematics</li>
