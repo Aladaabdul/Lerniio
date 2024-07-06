@@ -190,6 +190,41 @@
 .remove {
     display: none;
 }
+.syllabus-main, .each-subjext, .subjects, .syllabus {
+    margin: 0px;
+}
+.syllabus {
+    overflow-y: scroll;
+    scrollbar-width: thin;
+    width: 100vw;
+    display: none;
+}
+.each-subject {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px 0px;
+    margin-right: 20px;
+    background-color: #dbdbdbee;
+    padding: 12px 8px;
+    padding-right: 20px;
+    border-radius: 10px;
+}
+.subjects p {
+    font-size: 18px;
+    text-transform: capitalize;
+}
+.subjects-btn {
+    background-color: #570cb3;
+    padding: 10px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.subjects-btn:focus{
+    background-color: #2a025a;
+}
+/* the syllabus styling */
 
 /* mobile responsive view for the desktop */
 
@@ -345,7 +380,18 @@
     .remove {
         display: none;
     }
-
+    .each-subject {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        margin: 10px 0px;
+        margin-right: 10px;
+        background-color: #dbdbdbee;
+        padding: 12px 8px;
+        padding-right: 10px;
+        border-radius: 10px;
+    }
     /* resize the grid of the width */
     
     /* work on the navigation bar */
