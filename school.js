@@ -67,14 +67,22 @@ backBtn.addEventListener('click', () => {
 // the image carousel effects - next and prev button effects
 
 
-// the button events for the courses display
-const courseBtn = document.querySelector('.course-button');
+    // the button events for the courses display
+    const courseBtn = document.querySelector('.course-button');
+    const courseTemplate = document.querySelector('.courses-template');
+    const courseClose = document.querySelector('.course-ham svg');
+    
+    courseBtn.addEventListener('click', ()=>{
 
-courseBtn.addEventListener('click', (e) => {
-    e.preventDefault();
+        courseTemplate.style.display = 'flex';
 
-    // template for the course button pops up
-});
+    });
+
+    courseClose.addEventListener('click', ()=>{
+
+        courseTemplate.style.display = 'none';
+
+    });
 
 // using get and set attributes to change the source of the image on every click
 
